@@ -1,0 +1,37 @@
+Converting GML script: ${project_dir}\scripts\create_bullet\create_bullet.gml
+Converted description /// @description create_bullet(type, xspawn, yspawn, movespeed, timer, angle)/// @param type
+/// @param  xspawn
+/// @param  yspawn
+/// @param  movespeed
+/// @param  timer
+/// @param  angle
+
+Converting GML script: ${project_dir}\scripts\state_game_paused\state_game_paused.gml
+Converted description /// @description state_game_paused
+
+Converting GML script: ${project_dir}\scripts\state_baddie02\state_baddie02.gml
+Converted description /// @description state_baddie02
+
+Converting GML script: ${project_dir}\scripts\state_baddie02_projectile\state_baddie02_projectile.gml
+Converted description /// @description state_baddie02_projectile
+
+Converting GML script: ${project_dir}\scripts\state_idle\state_idle.gml
+Converted description /// @description state_idle
+
+Converting GML script: ${project_dir}\scripts\state_player\state_player.gml
+Converted description /// @description state_player
+
+Converting GML script: ${project_dir}\scripts\state_projectile\state_projectile.gml
+Converted description /// @description state_projectile
+
+Converting GML script: ${project_dir}\scripts\state_baddie01\state_baddie01.gml
+Converted description /// @description state_baddie01
+
+Converting GML script: ${project_dir}\scripts\level1_spawns\level1_spawns.gml
+Converted description /// @description level1_spawns()
+
+Missing audiogroup for sound: 'snd_shot' - setting to default audio group
+Game speed set to 60
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script '__global_object_depths.gml'
