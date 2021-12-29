@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "utilities",
-    "path": "folders/Scripts/utilities.yy",
+    "name": "waves",
+    "path": "folders/Scripts/waves.yy",
   },
   "resourceVersion": "1.0",
-  "name": "create_bullet",
+  "name": "surround_four_baddie01",
   "tags": [],
   "resourceType": "GMScript",
 }

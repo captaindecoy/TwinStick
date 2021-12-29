@@ -1,5 +1,10 @@
 /// @description state_projectile
 function state_projectile() {
+	if(destroy == true)
+	{
+		instance_destroy();	
+	}
+	
 	x += (lengthdir_x(rhvalue, dir)) * sign(rhvalue) * movespeed;
 	y += (lengthdir_y(rvvalue, dir)) * sign(rvvalue) * movespeed;
 
@@ -14,18 +19,35 @@ function state_projectile() {
 	        }
         
 	    }
-	    instance_destroy();
+	    destroy = true;
 	}
 
 	timer--;
 	if(timer <= 0)
 	{
-	    instance_destroy();
+	    destroy = true;
 	}
 
 	if(x <= global.left_border || x >= global.right_border 
 		|| y <= global.top_border || y >= global.bottom_border)
 	{
-		instance_destroy();
+		// Trying to correct bullet passing boundary
+		if(x <= global.left_border)
+		{
+			x = global.left_border;
+		}
+		if(x >= global.right_border)
+		{
+			x = global.right_border;
+		}
+		if(y <= global.top_border)
+		{
+			y = global.top_border;
+		}
+		if(y >= global.bottom_border)
+		{
+			y = global.bottom_border;	
+		}
+		destroy = true;
 	}
 }

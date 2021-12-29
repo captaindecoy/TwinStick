@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "utilities",
-    "path": "folders/Scripts/utilities.yy",
+    "name": "states",
+    "path": "folders/Scripts/states.yy",
   },
   "resourceVersion": "1.0",
-  "name": "create_bullet",
+  "name": "state_baddie_spawn",
   "tags": [],
   "resourceType": "GMScript",
 }

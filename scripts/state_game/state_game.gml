@@ -1,7 +1,7 @@
 function state_game() {
 	game_timer++;
 
-	if(obj_player.current_health <= 0)
+	if(obj_player.current_health <= 0 || gamepad_button_check_pressed(0, gp_select))
 	{
 	    game_restart();
 	}
@@ -16,6 +16,11 @@ function state_game() {
 	}
 
 	level1_spawns(game_timer);
+	
+	if(game_timer == room_speed * 10)
+	{
+		surround_four_baddie01();	
+	}
 
 
 	/*
