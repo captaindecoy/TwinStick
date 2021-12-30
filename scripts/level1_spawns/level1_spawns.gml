@@ -3,29 +3,33 @@ function level1_spawns(argument0) {
 	time = argument0;
 	switch(time)
 	{
-	    case 60:
-	        instance_create(256, 128, obj_baddie02);
-	        break;
 	    case 90:
-	        instance_create(768, 128, obj_baddie02);
+		case 400:
+	        instance_create(224, 224, obj_baddie02);
 	        break;
-	    case 120:
-	        instance_create(768, 640, obj_baddie02);
+	    case 130:
+		case 430:
+	        instance_create(800, 224, obj_baddie02);
 	        break;
-	    case 150:
-	        instance_create(256, 640, obj_baddie02);
+	    case 170:
+		case 460:
+	        instance_create(800, 544, obj_baddie02);
 	        break;
 	    case 210:
-	        instance_create(992, 736, obj_baddie01);
+		case 490:
+	        instance_create(224, 544, obj_baddie02);
 	        break;
-	    case 240:
-	        instance_create(64, 736, obj_baddie01);
+	    case 250:
+	        instance_create(800, 608, obj_baddie01);
 	        break;
-		case 270:
-	        instance_create(64, 64, obj_baddie01);
+	    case 290:
+	        instance_create(224, 608, obj_baddie01);
 	        break;
-	    case 300:
-	        instance_create(960, 64, obj_baddie01);
+		case 330:
+	        instance_create(224, 160, obj_baddie01);
+	        break;
+	    case 370:
+	        instance_create(800, 160, obj_baddie01);
 	        break;
 	}
 }

@@ -1,7 +1,7 @@
 ///no parameters
 function surround_four_baddie01(){
-	instance_create(768, 384, obj_baddie01);
-	instance_create(512, 128, obj_baddie01);
-	instance_create(256, 384, obj_baddie01);
-	instance_create(512, 640, obj_baddie01);
+	instance_create(800, 384, obj_baddie01);
+	instance_create(512, 160, obj_baddie01);
+	instance_create(224, 384, obj_baddie01);
+	instance_create(512, 608, obj_baddie01);
 }

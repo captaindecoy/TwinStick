@@ -6,5 +6,5 @@ if(destroy == false)
 }
 else
 {
-	draw_circle_color(x, y, sprite_width / 2, c_red, c_red, false);	
+	draw_circle_color(x, y, sprite_width / 2, c_white, c_white, false);	
 }

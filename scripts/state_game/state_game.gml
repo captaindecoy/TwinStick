@@ -17,7 +17,7 @@ function state_game() {
 
 	level1_spawns(game_timer);
 	
-	if(game_timer == room_speed * 10)
+	if(game_timer == room_speed * 15)
 	{
 		surround_four_baddie01();	
 	}
