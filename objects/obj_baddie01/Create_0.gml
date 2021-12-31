@@ -6,6 +6,7 @@ movespeed = 3;
 update_timer = 10;
 hp = 2;
 spawn_timer = room_speed;
+health_segment = sprite_width / 2;
 
 if(instance_number(obj_player) > 0)
 {

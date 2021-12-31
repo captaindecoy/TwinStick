@@ -6,7 +6,7 @@
     "path": "folders/Scripts/states.yy",
   },
   "resourceVersion": "1.0",
-  "name": "state_game",
+  "name": "state_game_break",
   "tags": [],
   "resourceType": "GMScript",
 }

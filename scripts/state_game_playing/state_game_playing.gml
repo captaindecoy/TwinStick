@@ -1,5 +1,6 @@
-function state_game() {
+function state_game_playing() {
 	game_timer++;
+	wave_timer++;
 
 	if(obj_player.current_health <= 0 || gamepad_button_check_pressed(0, gp_select))
 	{
@@ -15,13 +16,23 @@ function state_game() {
 	    ds_stack_push(state, state_game_paused);  
 	}
 
-	level1_spawns(game_timer);
+	level1_spawns(wave_timer);
 	
-	if(game_timer == room_speed * 15)
+	if(wave_timer == room_speed * 15)
 	{
 		surround_four_baddie01();	
+		wave_spawning_done = true;
 	}
-
+	
+	if(wave_spawning_done == true && instance_number(obj_enemy_parent) == 0)
+	{
+		ds_stack_pop(state);
+		ds_stack_push(state, state_game_break);
+		wave_spawning_done = false;
+		wave_timer = 0;
+		wave_count++;
+		wave_break_text = "WAVE " + string(wave_count);
+	}
 
 	/*
 	if(game_timer mod (room_speed * 10) == 0)
