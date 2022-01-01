@@ -30,6 +30,7 @@ function level1_spawns(argument0) {
 	        break;
 	    case 370:
 	        instance_create(800, 160, obj_baddie01);
+			wave_spawning_done = true;
 	        break;
 	}
 }

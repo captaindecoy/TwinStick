@@ -18,4 +18,5 @@ global.bottom_border = room_height - 96;
 wave_break_timer = room_speed * 7;
 wave_count = 1;
 wave_break_text = "WAVE " + string(wave_count);
+current_wave = wave_break_text;
 wave_spawning_done = false;
