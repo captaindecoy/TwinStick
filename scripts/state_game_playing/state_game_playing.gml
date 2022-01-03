@@ -55,13 +55,22 @@ function state_game_playing() {
 	
 	if(wave_spawning_done == true && instance_number(obj_enemy_parent) == 0)
 	{
-		ds_stack_pop(state);
-		ds_stack_push(state, state_game_break);
+		
 		wave_spawning_done = false;
 		wave_timer = 0;
 		wave_count++;
 		wave_break_text = "WAVE " + string(wave_count);
 		current_wave = wave_break_text;
+		
+		ds_stack_pop(state);
+		if(wave_count == 2)
+		{
+			ds_stack_push(state, state_game_upgrades);
+		}
+		else
+		{
+			ds_stack_push(state, state_game_break);
+		}
 	}
 
 	/*

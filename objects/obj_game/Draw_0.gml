@@ -28,6 +28,21 @@ if(ds_stack_top(state) == state_game_paused)
 	draw_set_font(fnt_arial_default);
 }
 
+if(ds_stack_top(state) == state_game_upgrades)
+{
+	draw_set_font(fnt_arial_big_wave);
+	draw_set_halign(fa_center);
+	//draw_set_valign(fa_center);
+	draw_text_transformed(room_width / 2, global.top_border, "CHOOSE AN UPGRADE", .5, .5, 0);
+	draw_set_halign(fa_left);
+	//draw_set_valign(fa_top);
+	draw_set_font(fnt_arial_default);
+	draw_rectangle(global.left_border + 8, global.top_border + 128, room_width /2 - 16, global.bottom_border - 128, true);
+	draw_text(global.left_border + 8, global.top_border + 128, "+1 HP FOR PLAYER");
+	draw_rectangle(room_width /2 + 16, global.top_border + 128, global.right_border - 8, global.bottom_border - 128, true);
+	draw_text(room_width /2 + 16, global.top_border + 128, "PLAYER MOVEMENT 50% FASTER");
+}
+
 //draw_rectangle(global.left_border, global.top_border, global.right_border, global.bottom_border, true);
 
 /*
