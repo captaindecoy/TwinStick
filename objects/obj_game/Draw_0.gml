@@ -15,7 +15,8 @@ if(ds_stack_top(state) == state_game_break)
 draw_text(global.left_border, 76, "HP " + string(obj_player.current_health) + "/" + string(obj_player.max_health));
 draw_rectangle(160, 82, 160 + (32 * obj_player.max_health), 90, true);
 draw_rectangle(160, 82, 160 + (32 * obj_player.current_health), 90, false);
-draw_text(room_width / 2, 76, current_wave);
+draw_text(room_width / 2, 76, current_wave)
+draw_text(room_width / 2 - 128, 76, "Speed = " + string(obj_player.movespeed));
 
 if(ds_stack_top(state) == state_game_paused)
 {
@@ -40,9 +41,10 @@ if(ds_stack_top(state) == state_game_upgrades)
 	/*
 	draw_rectangle(global.left_border + 8, global.top_border + 128, room_width /2 - 16, global.bottom_border - 128, true);
 	draw_text(global.left_border + 8, global.top_border + 128, "+1 HP FOR PLAYER");
-	*/
+	
 	draw_rectangle(room_width /2 + 16, global.top_border + 128, global.right_border - 8, global.bottom_border - 128, true);
 	draw_text(room_width /2 + 16, global.top_border + 128, "PLAYER MOVEMENT 50% FASTER");
+	*/
 }
 
 //draw_rectangle(global.left_border, global.top_border, global.right_border, global.bottom_border, true);

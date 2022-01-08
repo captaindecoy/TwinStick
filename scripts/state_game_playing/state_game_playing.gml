@@ -66,8 +66,10 @@ function state_game_playing() {
 		if(wave_count == 2)
 		{
 			ds_stack_push(state, state_game_upgrades);
-			upgrade1 = instance_create(128, 192, obj_upgrade_hp);
+			upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
 			upgrade1.button = gp_shoulderl;
+			upgrade1 = instance_create(global.upgrade2_x, global.upgrade2_y, obj_upgrade_hp);
+			upgrade1.button = gp_shoulderr;
 		}
 		else
 		{

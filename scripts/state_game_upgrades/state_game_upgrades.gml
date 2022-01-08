@@ -11,11 +11,12 @@ function state_game_upgrades(){
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_break);
 	}
-	*/
+	
 	if(gamepad_button_check_pressed(0, gp_shoulderr))
 	{
 		obj_player.movespeed = 6;
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_break);
 	}
+	*/
 }

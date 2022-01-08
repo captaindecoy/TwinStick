@@ -9,6 +9,9 @@ if(button != "")
 		obj_player.current_health++;
 		ds_stack_pop(obj_game.state);
 		ds_stack_push(obj_game.state, state_game_break);
-		instance_destroy();
+		with(obj_parent_upgrade)
+		{
+			instance_destroy();
+		}
 	}
 }

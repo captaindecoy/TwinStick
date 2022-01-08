@@ -5,10 +5,12 @@ if(button != "")
 {
 	if(gamepad_button_check_pressed(0, button) == true)
 	{
-		obj_player.max_health++;
-		obj_player.current_health++;
+		obj_player.movespeed *= 1.5;
 		ds_stack_pop(obj_game.state);
 		ds_stack_push(obj_game.state, state_game_break);
-		instance_destroy();
+		with(obj_parent_upgrade)
+		{
+			instance_destroy();
+		}
 	}
 }
