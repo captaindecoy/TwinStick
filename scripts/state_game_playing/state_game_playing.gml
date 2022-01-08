@@ -66,53 +66,12 @@ function state_game_playing() {
 		if(wave_count == 2)
 		{
 			ds_stack_push(state, state_game_upgrades);
+			upgrade1 = instance_create(128, 192, obj_upgrade_hp);
+			upgrade1.button = gp_shoulderl;
 		}
 		else
 		{
 			ds_stack_push(state, state_game_break);
 		}
 	}
-
-	/*
-	if(game_timer mod (room_speed * 10) == 0)
-	{
-	    if(timer_update > 0)
-	    {
-	        timer_update -= 10;
-	    }
-	    else
-	    {
-	        timer_update = 0;
-	    }
-	}
-
-	if(timer1 > 0)
-	{
-	    timer1--;
-	}
-	else
-	{
-	    if(spawn_locationX == -100)
-	    {
-	        spawn_locationX = irandom_range(32, room_width - 32);
-	        spawn_locationY = irandom_range(32, room_height - 32);
-	    }
-	    if(spawn_timer > 0)
-	    {
-	        spawn_timer--;
-	    }
-	    else
-	    {
-	        instance_create(spawn_locationX, spawn_locationY, obj_baddie01);
-	        spawn_locationX = -100;
-	        spawn_locationY = -100;
-	        timer1 = timer_update;
-	        spawn_timer = 60; // faster spawn if using timer_update 
-	    }
-	}
-	*/
-
-
-
-
 }
