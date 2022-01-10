@@ -16,7 +16,7 @@ function state_projectile() {
 		    {
 		        if(hp > 0)
 		        {
-		            hp--;
+		            hp -= other.damage;
 		        }
         
 		    }

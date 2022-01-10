@@ -3,20 +3,23 @@
 function state_game_upgrades(){
 	//left_upgrade = "health";
 	//right_upgrade = "speed";
-	/*
+
 	if(gamepad_button_check_pressed(0, gp_shoulderl))
 	{
-		obj_player.max_health++;
-		obj_player.current_health++;
-		ds_stack_pop(state);
-		ds_stack_push(state, state_game_break);
+		upgrade1.selected = true;
+		if(upgrade2_obj != noone)
+		{
+			ds_list_add(upgrade_list, upgrade2_obj);
+		}
 	}
 	
-	if(gamepad_button_check_pressed(0, gp_shoulderr))
+	if(gamepad_button_check_pressed(0, gp_shoulderr) && upgrade2_obj != noone)
 	{
-		obj_player.movespeed = 6;
-		ds_stack_pop(state);
-		ds_stack_push(state, state_game_break);
+		upgrade2.selected = true;
+		//if(upgrade1_obj)
+		//{
+			ds_list_add(upgrade_list, upgrade1_obj);
+		//}
 	}
-	*/
+	
 }

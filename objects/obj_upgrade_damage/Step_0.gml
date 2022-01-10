@@ -5,7 +5,7 @@
 //{
 	if(selected == true)
 	{
-		obj_player.movespeed *= 1.5;
+		obj_player.bullet_damage += 1;
 		ds_stack_pop(obj_game.state);
 		ds_stack_push(obj_game.state, state_game_break);
 		with(obj_parent_upgrade)

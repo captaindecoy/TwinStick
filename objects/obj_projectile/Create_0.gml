@@ -10,4 +10,5 @@ image_angle = 0;
 timer = 0;
 image_speed = 0;
 destroy = false;
+damage = 1;
 

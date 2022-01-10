@@ -20,6 +20,7 @@ function create_bullet(argument0, argument1, argument2, argument3, argument4, ar
 	bullet.dir = _angle;
 	bullet.image_angle = bullet.dir;
 	bullet.timer = _timer;
+	bullet.damage = bullet_damage;
 
 
 

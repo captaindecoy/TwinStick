@@ -11,5 +11,6 @@ max_health = 3;
 current_health = max_health;
 fire_mode = 1;
 muzzel_flash = false;
+bullet_damage = 1;
 
 

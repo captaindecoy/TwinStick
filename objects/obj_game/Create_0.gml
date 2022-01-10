@@ -1,7 +1,7 @@
 state = ds_stack_create();
 ds_stack_push(state, state_game_break);
 
-
+randomize();
 game_timer = 0;
 wave_timer = 0;
 timer_update = 60
@@ -15,6 +15,19 @@ global.left_border = 96;
 global.top_border = 96;
 global.right_border = room_width - 96;
 global.bottom_border = room_height - 96;
+
+//upgrade variables
+upgrade_list = ds_list_create();
+ds_list_add(upgrade_list, 
+	obj_upgrade_hp, 
+	obj_upgrade_speed,
+	obj_upgrade_damage,
+	obj_upgrade_healall,
+	obj_upgrade_twoshot,
+	obj_upgrade_waveheal);
+upgrade1 = noone;
+upgrade2 = noone;
+heal_after_wave = false;
 
 //upgrade option positions
 global.upgrade1_x = 128;

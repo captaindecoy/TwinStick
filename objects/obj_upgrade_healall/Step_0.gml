@@ -3,9 +3,10 @@
 
 //if(button != "")
 //{
+	//if(gamepad_button_check_pressed(0, button) == true)
 	if(selected == true)
 	{
-		obj_player.movespeed *= 1.5;
+		obj_player.current_health = obj_player.max_health;
 		ds_stack_pop(obj_game.state);
 		ds_stack_push(obj_game.state, state_game_break);
 		with(obj_parent_upgrade)

@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(button != "")
-{
-	if(gamepad_button_check_pressed(0, button) == true)
+//if(button != "")
+//{
+	//if(gamepad_button_check_pressed(0, button) == true)
+	if(selected == true)
 	{
 		obj_player.max_health++;
 		obj_player.current_health++;
@@ -14,4 +15,4 @@ if(button != "")
 			instance_destroy();
 		}
 	}
-}
+//}

@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-description = "Increase HP + 1.";
+description = "Increase maximum HP +1.\nIf you are missing HP, this will heal 1HP.";
 button = "";
 x2 = 0;
 y2 = 0;
+selected = false;
 
 if(x == global.upgrade1_x)
 {

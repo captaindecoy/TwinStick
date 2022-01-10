@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-description = "Increase speed 50%";
+description = "Attack Damage +1";
 button = "";
 
 x2 = 0;

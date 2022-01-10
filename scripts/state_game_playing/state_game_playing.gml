@@ -58,22 +58,48 @@ function state_game_playing() {
 		
 		wave_spawning_done = false;
 		wave_timer = 0;
+		/*
 		wave_count++;
 		wave_break_text = "WAVE " + string(wave_count);
 		current_wave = wave_break_text;
-		
+		*/
 		ds_stack_pop(state);
-		if(wave_count == 2)
+		if(wave_count % 3 == 0 && ds_list_size(upgrade_list) > 0)
 		{
 			ds_stack_push(state, state_game_upgrades);
-			upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
-			upgrade1.button = gp_shoulderl;
-			upgrade1 = instance_create(global.upgrade2_x, global.upgrade2_y, obj_upgrade_hp);
-			upgrade1.button = gp_shoulderr;
+			if(ds_list_size(upgrade_list) > 1)
+			{	
+				ds_list_shuffle(upgrade_list);
+				upgrade1_obj = upgrade_list[|0];
+				ds_list_delete(upgrade_list, 0);
+				ds_list_shuffle(upgrade_list);
+				upgrade2_obj = upgrade_list[|0];
+				ds_list_delete(upgrade_list, 0);
+				upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, upgrade1_obj);
+				//upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
+				upgrade1.button = gp_shoulderl;
+				upgrade2 = instance_create(global.upgrade2_x, global.upgrade2_y, upgrade2_obj);
+				upgrade2.button = gp_shoulderr;
+			}
+			else
+			{
+				upgrade1_obj = upgrade_list[|0];
+				upgrade2_obj = noone;
+				ds_list_delete(upgrade_list, 0);
+				upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, upgrade1_obj);
+				//upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
+			}
 		}
 		else
 		{
 			ds_stack_push(state, state_game_break);
+		}
+		wave_count++;
+		wave_break_text = "WAVE " + string(wave_count);
+		current_wave = wave_break_text;
+		if(heal_after_wave == true && obj_player.max_health != obj_player.current_health)
+		{
+				obj_player.current_health++;
 		}
 	}
 }

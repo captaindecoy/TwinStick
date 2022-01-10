@@ -1,0 +1,4 @@
+/// @description Insert description here
+// You can write your code in this editor
+draw_rectangle(x, y, x2, y2, true);
+draw_text(x, y, description);
