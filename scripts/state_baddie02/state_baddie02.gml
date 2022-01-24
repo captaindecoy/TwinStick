@@ -14,7 +14,7 @@ function state_baddie02() {
 	    fire_timer = fire_interval;
 	}
 
-	if(hp == 0)
+	if(hp <= 0)
 	{
 	    instance_destroy();
 	}

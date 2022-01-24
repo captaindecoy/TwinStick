@@ -19,15 +19,33 @@ global.bottom_border = room_height - 96;
 //upgrade variables
 upgrade_list = ds_list_create();
 ds_list_add(upgrade_list, 
-	obj_upgrade_hp, 
+	obj_upgrade_hp,
+	obj_upgrade_hp,
 	obj_upgrade_speed,
 	obj_upgrade_damage,
 	obj_upgrade_healall,
+	obj_upgrade_healall,
 	obj_upgrade_twoshot,
 	obj_upgrade_waveheal);
+enemy_upgrade_list = ds_list_create();
+ds_list_add(enemy_upgrade_list,
+	obj_enemy_upgrade_bug_hp,
+	obj_enemy_upgrade_bug_hp,
+	obj_enemy_upgrade_bug_speed,
+	obj_enemy_upgrade_bug_speed,
+	obj_enemy_upgrade_turret_attack_speed,
+	obj_enemy_upgrade_turret_attack_speed,
+	obj_enemy_upgrade_turret_hp,
+	obj_enemy_upgrade_turret_hp);
 upgrade1 = noone;
 upgrade2 = noone;
+enemy_upgrade1 = noone;
+enemy_upgrade2 = noone;
 heal_after_wave = false;
+upgrade_bug_hp = 0;
+upgrade_bug_movespeed = 0;
+upgrade_turret_hp = 0;
+upgrade_turret_attack_speed = 1;
 
 //upgrade option positions
 global.upgrade1_x = 128;
@@ -35,6 +53,12 @@ global.upgrade1_y = 192;
 
 global.upgrade2_x = 528;
 global.upgrade2_y = 192;
+
+global.enemy_upgrade1_x = 128;
+global.enemy_upgrade1_y = room_height / 2 + 16;
+
+global.enemy_upgrade2_x = 528;
+global.enemy_upgrade2_y = room_height / 2 + 16;
 
 //wave settings
 wave_break_timer = room_speed * 7;

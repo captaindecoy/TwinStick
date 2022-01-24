@@ -23,11 +23,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "upgrades",
-    "path": "folders/Objects/upgrades.yy",
+    "name": "enemy",
+    "path": "folders/Objects/upgrades/enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_parent_upgrade",
+  "name": "obj_parent_enemy_upgrade",
   "tags": [],
   "resourceType": "GMObject",
 }
