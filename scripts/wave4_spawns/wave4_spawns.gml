@@ -3,6 +3,9 @@ function wave4_spawns(argument0) {
 	time = argument0;
 	switch(time)
 	{
+		case 1:
+			vertical_wall();
+			break;
 		case 30:
 	        create_enemy(224, 224, obj_baddie02);
 			break;

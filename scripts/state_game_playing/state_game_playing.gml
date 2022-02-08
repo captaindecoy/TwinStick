@@ -23,7 +23,7 @@ function state_game_playing() {
 	}
 	else if(wave_count % 4 == 0 && wave_spawning_done == false)
 	{
-		wave4_spawns(wave_timer);
+		wave4_spawns(wave_timer);	
 		//wave_spawning_done = true;
 	}
 	else if(wave_count % 3 == 0 && wave_spawning_done == false)

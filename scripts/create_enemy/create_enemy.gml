@@ -16,6 +16,9 @@ function create_enemy(_x, _y, _obj){
 			inst.hp += upgrade_turret_hp;
 			inst.fire_interval *= upgrade_turret_attack_speed;
 			break;
+		case obj_wall:
+			inst = instance_create(_x, _y, obj_wall);
+			break;
 		default:
 			return;
 	}
