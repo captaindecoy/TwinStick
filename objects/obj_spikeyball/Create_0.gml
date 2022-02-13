@@ -6,7 +6,7 @@ movespeed = 3;
 update_timer = 10;
 hp = 10;
 spawn_timer = room_speed;
-health_segment = sprite_width / 2;
+health_segment = sprite_width / hp;
 target_dir = point_direction(x, y, x + 1, y -1);
 
 /*
