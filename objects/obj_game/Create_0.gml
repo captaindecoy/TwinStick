@@ -7,6 +7,7 @@ wave_timer = 0;
 timer_update = 60
 timer1 = timer_update;
 spawn_timer = timer1;
+enable_powerups = false;
 //spawn_locationX = -100;
 //spawn_locationY = -100;
 
