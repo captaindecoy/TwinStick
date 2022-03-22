@@ -44,6 +44,7 @@ function state_mite() {
 	*/
 	if(hp <= 0)
 	{
+		part_particles_create(global.P_System, x, y, global.Particle1, 50);
 	    instance_destroy();
 	}
 	/*

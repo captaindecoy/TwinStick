@@ -67,3 +67,6 @@ wave_count = 1;
 wave_break_text = "WAVE " + string(wave_count);
 current_wave = wave_break_text;
 wave_spawning_done = false;
+
+//global.P_System = part_system_create_layer(layer, true);
+//global.Particle1 = part_type_create();
