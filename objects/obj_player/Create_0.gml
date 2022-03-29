@@ -4,7 +4,7 @@ ds_stack_push(state, state_player);
 
 image_speed = 0;
 movespeed = 4;
-fire_rate = 10//7//14;
+fire_rate = 12//7//14;
 fire_rate_timer = fire_rate;
 analog_deadzone = .20;
 max_health = 3;
