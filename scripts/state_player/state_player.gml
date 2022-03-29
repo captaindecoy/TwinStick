@@ -67,7 +67,7 @@ function state_player() {
 	            yspawn = y + lengthdir_y(sprite_height*.75, obj_player.rdir + 90);
             
 	            create_bullet(obj_projectile, xspawn, yspawn, 12, room_speed/2, obj_player.rdir);
-				audio_play_sound(snd_shot, 10, false);
+				audio_play_sound(snd_shot, 7, false);
 	            /*
 	            bullet = instance_create(xspawn,yspawn,obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));

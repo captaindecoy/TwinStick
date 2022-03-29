@@ -45,6 +45,7 @@ function state_mite() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 50);
+		//audio_play_sound(snd_explosion2, 10, false);
 	    instance_destroy();
 	}
 	/*
