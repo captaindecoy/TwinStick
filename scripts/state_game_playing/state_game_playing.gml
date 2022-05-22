@@ -38,7 +38,7 @@ function state_game_playing() {
 	}
 	else if(wave_spawning_done == false)//if(wave_count == 1)
 	{
-		wave1_spawns(wave_timer);
+		wave1_new_spawns(wave_timer);
 		//wave_spawning_done = true;
 	}
 	
