@@ -7,6 +7,7 @@ function state_baddie_spawn(){
 	}
 	else
 	{
+		active = true;
 		ds_stack_pop(state);
 		ds_stack_push(state, active_state);
 	}

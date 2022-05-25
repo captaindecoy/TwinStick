@@ -8,6 +8,7 @@ timer_update = 60
 timer1 = timer_update;
 spawn_timer = timer1;
 enable_powerups = false;
+mite_spawns = 5;
 //spawn_locationX = -100;
 //spawn_locationY = -100;
 

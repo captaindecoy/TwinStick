@@ -1,6 +1,7 @@
 event_inherited();
 ds_stack_push(state, state_baddie_spawn);
 
+active = false;
 active_state = state_spikeyball;
 movespeed = 3;
 update_timer = 10;

@@ -93,7 +93,7 @@ function state_player() {
 	}
 
 	collider = instance_place(x, y, obj_enemy_parent)
-	if(collider != noone)
+	if(collider != noone && collider.active == true)
 	{
 	    with(collider)
 	    {

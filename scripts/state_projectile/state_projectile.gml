@@ -10,7 +10,7 @@ function state_projectile() {
 		y += (lengthdir_y(rvvalue, dir)) * sign(rvvalue) * movespeed;
 
 		collider = instance_place(x, y, obj_enemy_parent)
-		if(collider != noone)
+		if(collider != noone && collider.active == true)
 		{
 		    with(collider)
 		    {
