@@ -16,7 +16,7 @@ function state_mite() {
 	        //target_dir = point_direction(x, y, obj_player.x, obj_player.y);
 	        //image_angle = target_dir;
 			
-			if(distance_to_object(obj_player) < 150)
+			if(distance_to_object(obj_player) < 200)
 			{
 				if(irandom(100) > 99)
 				{

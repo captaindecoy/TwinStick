@@ -13,7 +13,11 @@ function state_game_paused() {
 	    }*/   
 	    ds_stack_pop(state);
 	}
-
+	
+	if(obj_player.current_health <= 0 || gamepad_button_check_pressed(0, gp_select))
+	{
+	    game_restart();
+	}
 
 
 }

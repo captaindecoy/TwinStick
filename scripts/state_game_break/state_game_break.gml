@@ -4,8 +4,22 @@ function state_game_break(){
 	/*if(wave_break_timer > room_speed * 5)
 	{
 		wave_break_text = "WAVE 1";
+	}*/
+	if(obj_player.current_health <= 0 || gamepad_button_check_pressed(0, gp_select))
+	{
+	    game_restart();
 	}
-	else */if(wave_break_timer < room_speed * 5)
+
+	if(gamepad_button_check_pressed(0, gp_start) && ds_stack_top(obj_player.state) == state_player)
+	{
+	    with(obj_actor_parent)
+	    {
+	        ds_stack_push(state, state_idle);
+	    }
+	    ds_stack_push(state, state_game_paused);  
+	}
+	//else */
+	if(wave_break_timer < room_speed * 5)
 	{
 		//wave_break_text = 5;
 		wave_break_text = wave_break_timer div room_speed;

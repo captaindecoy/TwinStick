@@ -35,6 +35,7 @@
     {"id":{"name":"state_player","path":"scripts/state_player/state_player.yy",},"order":9,},
     {"id":{"name":"obj_spikeyball","path":"objects/obj_spikeyball/obj_spikeyball.yy",},"order":18,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":6,},
+    {"id":{"name":"wave2_new_spawns","path":"scripts/wave2_new_spawns/wave2_new_spawns.yy",},"order":8,},
     {"id":{"name":"spr_mite","path":"sprites/spr_mite/spr_mite.yy",},"order":8,},
     {"id":{"name":"state_game_playing","path":"scripts/state_game_playing/state_game_playing.yy",},"order":11,},
     {"id":{"name":"state_projectile","path":"scripts/state_projectile/state_projectile.yy",},"order":13,},
