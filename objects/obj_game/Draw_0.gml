@@ -17,6 +17,7 @@ draw_rectangle(160, 82, 160 + (32 * obj_player.max_health), 90, true);
 draw_rectangle(160, 82, 160 + (32 * obj_player.current_health), 90, false);
 draw_text(room_width / 2, 76, current_wave)
 draw_text(room_width / 2 - 128, 76, "Speed = " + string(obj_player.movespeed));
+draw_text(room_width / 2 + 128 , 76, "Wave Timer: " + string(wave_timer/room_speed));
 
 if(ds_stack_top(state) == state_game_paused)
 {

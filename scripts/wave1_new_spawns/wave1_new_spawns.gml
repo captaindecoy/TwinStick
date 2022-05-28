@@ -12,7 +12,7 @@ function wave1_new_spawns(argument0) {
 			mite_spawns--;
 		}
 		
-		else if((time % (room_speed * 3) == 0) && mite_spawns <= 8) {
+		else if((time % (room_speed * 3.25) == 0) && mite_spawns <= 8) {
 			//spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);
 			spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);
 			mite_spawns--;

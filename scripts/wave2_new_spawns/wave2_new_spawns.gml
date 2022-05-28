@@ -30,7 +30,8 @@ function wave2_new_spawns(argument0) {
 		instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
 		instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
 		instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
-		wave_spawning_done = true;	
+		wave_spawning_done = true;
+		mite_spawns = 10;
 	}
 	
 	/*

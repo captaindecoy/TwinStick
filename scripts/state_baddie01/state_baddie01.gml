@@ -1,6 +1,13 @@
 /// @description state_baddie01
 function state_baddie01() {
-
+	/*
+	if(previousHp != hp)
+	{
+		target_dir = point_direction(x, y, irandom_range(global.left_border, global.right_border), irandom_range(global.top_border, global.bottom_border));
+		update_timer = room_speed;
+		image_angle = target_dir;
+	}
+	*/
 	if(update_timer > 0)
 	{
 	    update_timer--;
@@ -55,7 +62,5 @@ function state_baddie01() {
 	    }
 	}
 	*/
-
-
-
+	previousHp = hp;
 }

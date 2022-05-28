@@ -16,6 +16,7 @@ function state_projectile() {
 		    {
 		        if(hp > 0)
 		        {
+					//previousHp = hp;
 		            hp -= other.damage;
 		        }
         

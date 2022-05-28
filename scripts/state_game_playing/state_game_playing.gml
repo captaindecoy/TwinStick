@@ -28,8 +28,9 @@ function state_game_playing() {
 	}
 	else if(wave_count % 3 == 0 && wave_spawning_done == false)
 	{
-		surround_four_baddie02();
-		wave_spawning_done = true;
+		wave3_new_spawns(wave_timer);
+		//surround_four_baddie02();
+		//wave_spawning_done = true;
 	}
 	else if(wave_count % 2 == 0 && wave_spawning_done == false)
 	{

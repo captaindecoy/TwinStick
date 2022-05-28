@@ -42,6 +42,7 @@
     {"id":{"name":"obj_upgrade_hp","path":"objects/obj_upgrade_hp/obj_upgrade_hp.yy",},"order":1,},
     {"id":{"name":"state_baddie01","path":"scripts/state_baddie01/state_baddie01.yy",},"order":15,},
     {"id":{"name":"level1_spawns","path":"scripts/level1_spawns/level1_spawns.yy",},"order":0,},
+    {"id":{"name":"wave3_new_spawns","path":"scripts/wave3_new_spawns/wave3_new_spawns.yy",},"order":9,},
     {"id":{"name":"instance_create","path":"scripts/instance_create/instance_create.yy",},"order":1,},
     {"id":{"name":"snd_explosion1","path":"sounds/snd_explosion1/snd_explosion1.yy",},"order":2,},
     {"id":{"name":"wave1_new_spawns","path":"scripts/wave1_new_spawns/wave1_new_spawns.yy",},"order":6,},

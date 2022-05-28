@@ -5,7 +5,8 @@ active = false;
 active_state = state_baddie01;
 movespeed = 3;
 update_timer = 10;
-hp = 2;
+hp = 3;
+previousHp = hp;
 spawn_timer = room_speed;
 health_segment = sprite_width / hp;
 

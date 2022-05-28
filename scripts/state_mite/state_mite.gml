@@ -16,12 +16,13 @@ function state_mite() {
 	        //target_dir = point_direction(x, y, obj_player.x, obj_player.y);
 	        //image_angle = target_dir;
 			
-			if(distance_to_object(obj_player) < 200)
+			if(distance_to_object(obj_player) < 200 && rush_timer <= 0)
 			{
 				if(irandom(100) > 99)
 				{
-					movespeed = 4;
-					update_timer = 4;
+					image_speed = .5;
+					movespeed = rush_speed;
+					//update_timer = 4;
 					//image_blend = c_red;
 				}
 			}
@@ -33,7 +34,7 @@ function state_mite() {
 	    //x += lengthdir_x(2, target_dir) * movespeed;
 	    //y += lengthdir_y(2, target_dir) * movespeed;
 	    //update_timer = 10;
-		if(movespeed != 4)
+		if(movespeed != rush_speed)
 		{
 			update_timer = irandom_range(1, 6);
 		}
@@ -79,5 +80,5 @@ function state_mite() {
 	*/
 
 
-
+	rush_timer--;
 }
