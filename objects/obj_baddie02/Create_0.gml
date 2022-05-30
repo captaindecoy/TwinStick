@@ -1,6 +1,7 @@
 event_inherited();
 ds_stack_push(state, state_baddie_spawn);
 
+image_speed = 0;
 active = false;
 active_state = state_baddie02;
 spawn_timer = room_speed;

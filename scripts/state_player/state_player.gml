@@ -108,7 +108,8 @@ function state_player() {
 
 	if(current_health <= 0)
 	{
-	    room_restart();
+		instance_destroy();
+	    //room_restart();
 	}
 
 

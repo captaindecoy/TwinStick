@@ -19,17 +19,25 @@ function state_game_break(){
 	    ds_stack_push(state, state_game_paused);  
 	}
 	//else */
-	if(wave_break_timer < room_speed * 5)
-	{
-		//wave_break_text = 5;
-		wave_break_text = wave_break_timer div room_speed;
-	}
-	wave_break_timer--;
-	if(wave_break_timer <= 0)
+	if(room == rm_testing)
 	{
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_playing);
-		wave_break_timer = room_speed * 7;
-		//wave_break_text = "WAVE " + string();
+	}
+	else 
+	{
+		if(wave_break_timer < room_speed * 5)
+		{
+			//wave_break_text = 5;
+			wave_break_text = wave_break_timer div room_speed;
+		}
+		wave_break_timer--;
+		if(wave_break_timer <= 0)
+		{
+			ds_stack_pop(state);
+			ds_stack_push(state, state_game_playing);
+			wave_break_timer = room_speed * 7;
+			//wave_break_text = "WAVE " + string();
+		}
 	}
 }

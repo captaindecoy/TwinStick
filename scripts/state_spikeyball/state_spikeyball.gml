@@ -1,6 +1,28 @@
 /// @description state_baddie01
 function state_spikeyball() {
+	image_angle += 1
 	
+	if(fire_timer > 0)
+	{
+	    fire_timer--;
+	}
+	else
+	{
+	    projectile1 = instance_create(x,y,obj_baddie02_projectile);
+		projectile2 = instance_create(x,y,obj_baddie02_projectile);
+		projectile3 = instance_create(x,y,obj_baddie02_projectile);
+		projectile4 = instance_create(x,y,obj_baddie02_projectile);
+	    projectile1.dir = point_direction(x, y, x + 1, y - 1);
+		projectile2.dir = point_direction(x, y, x - 1, y - 1);
+		projectile3.dir = point_direction(x, y, x - 1, y + 1);
+		projectile4.dir = point_direction(x, y, x + 1, y + 1);
+	    projectile1.image_angle = projectile1.dir;
+		projectile2.image_angle = projectile2.dir;
+		projectile3.image_angle = projectile3.dir;
+		projectile4.image_angle = projectile4.dir;
+	    //forgetting timer reset just makes infinite! kinda cool actually
+	    fire_timer = fire_interval;
+	}
 	
 	if(y + (lengthdir_y(1, target_dir) * movespeed) < global.top_border
 	|| y + (lengthdir_y(1, target_dir) * movespeed) > global.bottom_border)
