@@ -9,7 +9,32 @@ function state_player() {
 	{
 	    fire_rate_timer++;
 	}
-
+	
+	if(power_rate_timer > 0)
+	{
+		power_rate_timer--;	
+	}
+	else if(power_rate_timer == 0)
+	{
+		fire_mode = 1;
+	}
+	
+	/*
+	if(place_meeting(x, y, obj_power_spread))
+	{
+		fire_mode = 3;
+		power_rate_timer = power_rate;
+	}
+	*/
+	
+	/*
+	if(keyboard_check_pressed(ord("P")) == true)
+	{
+		fire_mode = 3;
+		power_rate_timer = power_rate;
+	}
+	*/
+	
 	var lhaxis = gamepad_axis_value(0, gp_axislh);
 	var lvaxis = gamepad_axis_value(0, gp_axislv);
 	ldir = point_direction(0, 0, lhaxis, lvaxis);
@@ -104,6 +129,17 @@ function state_player() {
 	        current_health--;
 	        image_index = 1;
 	    }
+	}
+	
+	power_collider = instance_place(x, y, obj_power_spread)
+	if(power_collider != noone) //&& collider.active == true)
+	{
+		 with(power_collider)
+	    {
+	        instance_destroy();
+	    }
+	    fire_mode = power_collider.power_mode;
+		power_rate_timer = power_rate;
 	}
 
 	if(current_health <= 0)

@@ -19,10 +19,10 @@ function wave1_new_spawns(argument0) {
 		}
 		//if
 		//}
-		//else if(irandom(80) == 1)
-		//{
-		//	instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
-		//}
+		if(irandom(80) == 1)
+		{
+			instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_power_spread);
+		}
 	}
 	else //if(instance_number(obj_enemy_parent) == 0)
 	{

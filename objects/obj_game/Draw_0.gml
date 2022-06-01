@@ -17,8 +17,11 @@ draw_rectangle(160, 82, 160 + (32 * obj_player.max_health), 90, true);
 draw_rectangle(160, 82, 160 + (32 * obj_player.current_health), 90, false);
 draw_text(room_width / 2, 76, current_wave)
 draw_text(room_width / 2 - 128, 76, "Speed = " + string(obj_player.movespeed));
-draw_text(room_width / 2 + 128 , 76, "Wave Timer: " + string(wave_timer/room_speed));
-
+draw_text(room_width / 2 + 64 , 76, "Wave Timer: " + string(wave_timer/room_speed));
+//draw_rectangle(room_width / 2 + 300, 82, global.right_border - 1, 90, true);
+//draw_rectangle(room_width / 2 + 300, 82, (global.right_border - room_width / 2 + 300) * ((obj_player.power_rate_timer / obj_player.power_rate)), 90, false);
+draw_rectangle(global.right_border - 80, 82, global.right_border, 90, true);
+draw_rectangle(global.right_border - 80, 82, (global.right_border - 80) + 80*(obj_player.power_rate_timer / obj_player.power_rate), 90, false);
 if(ds_stack_top(state) == state_game_paused)
 {
 	draw_set_font(fnt_arial_big_wave);
