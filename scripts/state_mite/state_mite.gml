@@ -64,6 +64,17 @@ function state_mite() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 50);
+		obj_game.mites_destroyed++;
+		if((obj_game.mites_destroyed % 16 == 0) && irandom(obj_game.current_powerup_chance) == 0)
+		{
+			instance_create(x, y, obj_power_spread);
+			obj_game.current_powerup_chance = obj_game.powerup_chance;
+			//instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_power_spread);
+		}
+		else if((obj_game.mites_destroyed % 16 == 0) && (obj_game.current_powerup_chance > 0))
+		{
+			obj_game.current_powerup_chance--;
+		}
 		//audio_play_sound(snd_explosion2, 10, false);
 	    instance_destroy();
 	}

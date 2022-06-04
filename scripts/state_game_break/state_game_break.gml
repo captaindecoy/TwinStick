@@ -5,7 +5,7 @@ function state_game_break(){
 	{
 		wave_break_text = "WAVE 1";
 	}*/
-	if(obj_player.current_health <= 0 || gamepad_button_check_pressed(0, gp_select))
+	if(/*obj_player.current_health <= 0 || */gamepad_button_check_pressed(0, gp_select))
 	{
 	    game_restart();
 	}
