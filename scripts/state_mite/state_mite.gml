@@ -67,7 +67,14 @@ function state_mite() {
 		obj_game.mites_destroyed++;
 		if((obj_game.mites_destroyed % 16 == 0) && irandom(obj_game.current_powerup_chance) == 0)
 		{
-			instance_create(x, y, obj_power_spread);
+			if(irandom(1) == 0)
+			{
+				instance_create(x, y, obj_power_spread);
+			}
+			else
+			{
+				instance_create(x, y, obj_power_pierce);
+			}
 			obj_game.current_powerup_chance = obj_game.powerup_chance;
 			//instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_power_spread);
 		}

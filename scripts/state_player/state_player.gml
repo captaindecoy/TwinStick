@@ -17,6 +17,7 @@ function state_player() {
 	else if(power_rate_timer == 0)
 	{
 		fire_mode = 1;
+		bullet_piercing = false;
 	}
 	
 	/*
@@ -139,6 +140,18 @@ function state_player() {
 	        instance_destroy();
 	    }
 	    fire_mode = power_collider.power_mode;
+		power_rate_timer = power_rate;
+	}
+	
+	power_collider = instance_place(x, y, obj_power_pierce)
+	if(power_collider != noone) //&& collider.active == true)
+	{
+		 with(power_collider)
+	    {
+	        instance_destroy();
+	    }
+	    //fire_mode = power_collider.power_mode;
+		bullet_piercing = true;
 		power_rate_timer = power_rate;
 	}
 

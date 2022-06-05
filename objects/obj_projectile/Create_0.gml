@@ -11,4 +11,11 @@ timer = 0;
 image_speed = 0;
 destroy = false;
 damage = 1;
+//bullet_piercing = false;
+hp = 1;
 
+enemies_hit_list = ds_list_create();
+if(obj_player.bullet_piercing == true)
+{
+	hp = 3;
+}

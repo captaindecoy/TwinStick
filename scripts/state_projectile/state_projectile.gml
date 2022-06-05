@@ -1,6 +1,6 @@
 /// @description state_projectile
 function state_projectile() {
-	if(destroy == true)
+	if(hp == 0)
 	{
 		instance_destroy();	
 	}
@@ -10,7 +10,7 @@ function state_projectile() {
 		y += (lengthdir_y(rvvalue, dir)) * sign(rvvalue) * movespeed;
 
 		collider = instance_place(x, y, obj_enemy_parent)
-		if(collider != noone && collider.active == true)
+		if(collider != noone && collider.active == true && ds_list_find_index(enemies_hit_list, collider) == -1)
 		{
 		    with(collider)
 		    {
@@ -21,13 +21,18 @@ function state_projectile() {
 		        }
         
 		    }
-		    destroy = true;
+			ds_list_add(enemies_hit_list, collider);
+		    //destroy = true;
+			hp--;
 		}
+		
+		
 
 		timer--;
 		if(timer <= 0)
 		{
-		    destroy = true;
+		    //destroy = true;
+			hp = 0;
 		}
 
 		if(x <= global.left_border || x >= global.right_border 
@@ -50,7 +55,8 @@ function state_projectile() {
 			{
 				y = global.bottom_border;	
 			}
-			destroy = true;
+			//destroy = true;
+			hp = 0;
 		}
 	}
 }
