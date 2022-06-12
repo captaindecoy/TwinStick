@@ -16,7 +16,7 @@ function state_mite() {
 	        //target_dir = point_direction(x, y, obj_player.x, obj_player.y);
 	        //image_angle = target_dir;
 			
-			if(distance_to_object(obj_player) < 200 && rush_timer <= 0)
+			if(distance_to_object(obj_player) < 200 && rush_timer <= 0 && rusher == true)
 			{
 				if(irandom(100) > 99)
 				{
@@ -26,8 +26,8 @@ function state_mite() {
 					//image_blend = c_red;
 				}
 			}
-			
 	    }
+		
 		x += lengthdir_x(1, target_dir) * movespeed;
 		y += lengthdir_y(1, target_dir) * movespeed;
 	    //Makes for a cool stop motion/old school look

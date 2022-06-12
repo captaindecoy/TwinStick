@@ -11,6 +11,7 @@ hp = 1;
 previousHp = hp;
 spawn_timer = room_speed;
 health_segment = sprite_width / hp;
+rusher = false;
 rush_timer = room_speed * 2;
 rush_speed = 3;
 

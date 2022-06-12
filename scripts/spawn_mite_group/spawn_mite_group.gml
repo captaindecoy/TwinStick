@@ -7,7 +7,11 @@ function spawn_mite_group(x_start, y_start, rows, columns)
 	{
 		for(j = 0; j < columns; j++)
 		{
-			instance_create(x_start + spacing*j, y_start + spacing*i, obj_mite);
+			mite = instance_create(x_start + spacing*j, y_start + spacing*i, obj_mite);
+			if((i = 0 && j == 0) || (i == rows - 1 && j == columns - 1))
+			{
+				mite.rusher = true;
+			}
 		}
 	}
 }

@@ -108,9 +108,9 @@ function state_player() {
 	        case 3:
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir);
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 20);
-	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 40);
+	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 40);
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 20);
-	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 40);
+	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 40);
             
 	            fire_rate_timer = 0;
 	            break;

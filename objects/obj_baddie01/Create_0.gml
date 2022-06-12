@@ -10,6 +10,7 @@ previousHp = hp;
 spawn_timer = room_speed;
 health_segment = sprite_width / hp;
 
+
 if(instance_number(obj_player) > 0)
 {
     target_dir = point_direction(x, y, obj_player.x, obj_player.y);

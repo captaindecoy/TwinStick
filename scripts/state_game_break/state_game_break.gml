@@ -24,7 +24,7 @@ function state_game_break(){
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_playing);
 	}
-	else 
+	else if(wave_count != 1)
 	{
 		if(wave_break_timer < room_speed * 5)
 		{
@@ -39,5 +39,11 @@ function state_game_break(){
 			wave_break_timer = room_speed * 7;
 			//wave_break_text = "WAVE " + string();
 		}
+	}
+	else if(wave_count == 1 && gamepad_button_check_pressed(0, gp_face1))
+	{
+		ds_stack_pop(state);
+		ds_stack_push(state, state_game_playing);
+		wave_break_timer = room_speed * 7;
 	}
 }
