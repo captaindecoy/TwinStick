@@ -29,7 +29,7 @@ draw_rectangle(global.right_border - 80, 82, global.right_border, 90, true);
 draw_rectangle(global.right_border - 80, 82, (global.right_border - 80) + 80*(obj_player.power_rate_timer / obj_player.power_rate), 90, false);
 for(i = 0; i < mite_spawns; i++)
 {
-	draw_sprite(spr_mite, 0, global.left_border + (i * 32), global.bottom_border + 2);
+	draw_sprite(spr_mite, 0, global.left_border + (i * 32) + 16, global.bottom_border + 16);
 }
 
 if(ds_stack_top(state) == state_game_paused)

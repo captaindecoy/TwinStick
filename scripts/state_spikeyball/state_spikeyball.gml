@@ -16,10 +16,19 @@ function state_spikeyball() {
 		projectile2.dir = point_direction(x, y, x - 1, y - 1);
 		projectile3.dir = point_direction(x, y, x - 1, y + 1);
 		projectile4.dir = point_direction(x, y, x + 1, y + 1);
+		//projectile1.dir = image_angle;
+		//projectile2.dir = image_angle + 90;
+		//projectile3.dir = image_angle - 90;
+		//projectile4.dir = image_angle + 180;
 	    projectile1.image_angle = projectile1.dir;
 		projectile2.image_angle = projectile2.dir;
 		projectile3.image_angle = projectile3.dir;
 		projectile4.image_angle = projectile4.dir;
+		// default movespeed is 10 on the object
+		projectile1.movespeed = 3;
+		projectile2.movespeed = 3;
+		projectile3.movespeed = 3;
+		projectile4.movespeed = 3;
 	    //forgetting timer reset just makes infinite! kinda cool actually
 	    fire_timer = fire_interval;
 	}
