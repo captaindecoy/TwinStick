@@ -27,11 +27,12 @@ draw_text(room_width / 2 + 64 , 76, "Wave Timer: " + string(wave_timer/room_spee
 //draw_rectangle(room_width / 2 + 300, 82, (global.right_border - room_width / 2 + 300) * ((obj_player.power_rate_timer / obj_player.power_rate)), 90, false);
 draw_rectangle(global.right_border - 80, 82, global.right_border, 90, true);
 draw_rectangle(global.right_border - 80, 82, (global.right_border - 80) + 80*(obj_player.power_rate_timer / obj_player.power_rate), 90, false);
+/*
 for(i = 0; i < mite_spawns; i++)
 {
 	draw_sprite(spr_mite, 0, global.left_border + (i * 32) + 16, global.bottom_border + 16);
 }
-
+*/
 if(ds_stack_top(state) == state_game_paused)
 {
 	draw_set_font(fnt_arial_big_wave);

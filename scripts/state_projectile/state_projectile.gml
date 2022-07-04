@@ -24,6 +24,7 @@ function state_projectile() {
 			ds_list_add(enemies_hit_list, collider);
 		    //destroy = true;
 			hp--;
+			//instance_create(x, y, obj_player_explosion);
 		}
 		
 		

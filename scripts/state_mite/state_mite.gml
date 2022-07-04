@@ -64,6 +64,9 @@ function state_mite() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 50);
+		
+		//if using mites destroyed for power up chance
+		/*
 		obj_game.mites_destroyed++;
 		if((obj_game.mites_destroyed % 16 == 0) && irandom(obj_game.current_powerup_chance) == 0)
 		{
@@ -83,6 +86,7 @@ function state_mite() {
 			obj_game.current_powerup_chance--;
 		}
 		//audio_play_sound(snd_explosion2, 10, false);
+		*/
 	    instance_destroy();
 	}
 	/*
