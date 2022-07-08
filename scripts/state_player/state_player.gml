@@ -10,6 +10,7 @@ function state_player() {
 	    fire_rate_timer++;
 	}
 	
+	/*
 	if(power_rate_timer > 0)
 	{
 		power_rate_timer--;	
@@ -19,7 +20,7 @@ function state_player() {
 		fire_mode = 1;
 		bullet_piercing = false;
 	}
-	
+	*/
 	/*
 	if(place_meeting(x, y, obj_power_spread))
 	{
@@ -44,8 +45,10 @@ function state_player() {
 	//show_debug_message("lvaxis = " + string(lvaxis));
 	//show_debug_message("ldir = " + string(ldir));
 
-	var rhaxis = gamepad_axis_value(0, gp_axisrh);
-	var rvaxis = gamepad_axis_value(0, gp_axisrv);
+	//var rhaxis = gamepad_axis_value(0, gp_axisrh);
+	//var rvaxis = gamepad_axis_value(0, gp_axisrv);
+	rhaxis = gamepad_axis_value(0, gp_axisrh);
+	rvaxis = gamepad_axis_value(0, gp_axisrv);
 	rdir = point_direction(0, 0, rhaxis, rvaxis);
 
 	if(abs(rhaxis) > analog_deadzone || abs(rvaxis) > analog_deadzone)
@@ -114,8 +117,23 @@ function state_player() {
             
 	            fire_rate_timer = 0;
 	            break;
+			case 4:
+				var _list = ds_list_create();
+				//var _num = collision_line_list(x - 100, y, x + 100, y, obj_enemy_parent, false, true, _list, false);
+				var _num = collision_line_list(x, y, x + lengthdir_x(64, obj_player.rdir), y + lengthdir_y(64, obj_player.rdir), obj_enemy_parent, false, true, _list, false);
+				if _num > 0
+				{
+				    for (var i = 0; i < _num; ++i;)
+				    {
+				        //instance_destroy(_list[| i]);
+						_list[| i].hp--;
+				    }
+				}
+				ds_list_destroy(_list);
+				fire_rate_timer = 0;
+				break;
 	    }
-	    muzzel_flash = true;
+	    //muzzel_flash = true;
 	}
 
 	collider = instance_place(x, y, obj_enemy_parent)

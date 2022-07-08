@@ -12,5 +12,11 @@ if(muzzel_flash == true)
     muzzel_flash = false;
 }
 
+if(fire_mode == 4 && (abs(rhaxis) > .5 || abs(rvaxis) > .5)) //&& fire_rate_timer == fire_rate)
+{
+	draw_set_color(c_red);
+	draw_line_width(x, y, x + lengthdir_x(64, obj_player.rdir)+2, y + lengthdir_y(64, obj_player.rdir)+2, 4);
+}
+
 /* */
 /*  */
