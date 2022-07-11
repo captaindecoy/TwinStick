@@ -52,6 +52,7 @@
     {"id":{"name":"state_game_break","path":"scripts/state_game_break/state_game_break.yy",},"order":17,},
     {"id":{"name":"object_get_depth","path":"scripts/object_get_depth/object_get_depth.yy",},"order":1,},
     {"id":{"name":"state_baddie_spawn","path":"scripts/state_baddie_spawn/state_baddie_spawn.yy",},"order":16,},
+    {"id":{"name":"obj_power_parent","path":"objects/obj_power_parent/obj_power_parent.yy",},"order":15,},
     {"id":{"name":"obj_enemy_upgrade_turret_attack_speed","path":"objects/obj_enemy_upgrade_turret_attack_speed/obj_enemy_upgrade_turret_attack_speed.yy",},"order":3,},
     {"id":{"name":"obj_upgrade_healall","path":"objects/obj_upgrade_healall/obj_upgrade_healall.yy",},"order":4,},
     {"id":{"name":"wave1_spawns","path":"scripts/wave1_spawns/wave1_spawns.yy",},"order":3,},

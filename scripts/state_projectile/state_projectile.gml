@@ -59,5 +59,10 @@ function state_projectile() {
 			//destroy = true;
 			hp = 0;
 		}
+		
+		if(instance_exists(obj_player) && obj_player.fire_mode == 5)
+		{
+			part_particles_create(global.P_System, x, y, global.particle2, 10);	
+		}
 	}
 }

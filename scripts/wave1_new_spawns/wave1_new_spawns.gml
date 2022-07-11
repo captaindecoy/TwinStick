@@ -12,7 +12,14 @@ function wave1_new_spawns(time) {
 	
 	if((time % (room_speed * 10) == 0))
 	{
-		instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_spread);
+		if(irandom(1) == 0)
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_spread);
+		}
+		else
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_pierce);
+		}
 	}
 }
 

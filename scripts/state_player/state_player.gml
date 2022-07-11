@@ -10,17 +10,19 @@ function state_player() {
 	    fire_rate_timer++;
 	}
 	
-	/*
+	
 	if(power_rate_timer > 0)
 	{
 		power_rate_timer--;	
 	}
+	
 	else if(power_rate_timer == 0)
 	{
 		fire_mode = 1;
+		fire_rate = starting_fire_rate;
 		bullet_piercing = false;
 	}
-	*/
+	
 	/*
 	if(place_meeting(x, y, obj_power_spread))
 	{
@@ -114,7 +116,7 @@ function state_player() {
 	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 40);
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 20);
 	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 40);
-            
+				audio_play_sound(snd_shot, 10, false);
 	            fire_rate_timer = 0;
 	            break;
 			case 4:
@@ -132,8 +134,26 @@ function state_player() {
 				ds_list_destroy(_list);
 				fire_rate_timer = 0;
 				break;
+			case 5: 
+	            bullet = instance_create(x + lengthdir_x(sprite_width*2, obj_player.rdir),
+							y + lengthdir_y(sprite_height*2, obj_player.rdir),
+							obj_projectile);
+	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
+	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
+	            bullet.movespeed = 12;
+	            bullet.dir = obj_player.rdir;
+	            bullet.image_angle = bullet.dir;
+	            bullet.timer = room_speed/2;
+				bullet.damage = 3;
+				bullet.image_xscale *= 2;
+				bullet.image_xscale *= 2;
+				bullet.hp = 5;
+				//fire_rate = 24;
+	            fire_rate_timer = 0;
+	            audio_play_sound(snd_explosion1, 10, false);
+	            break;
 	    }
-	    //muzzel_flash = true;
+	    muzzel_flash = true;
 	}
 
 	collider = instance_place(x, y, obj_enemy_parent)
@@ -150,7 +170,7 @@ function state_player() {
 	    }
 	}
 	
-	power_collider = instance_place(x, y, obj_power_spread)
+	power_collider = instance_place(x, y, obj_power_parent)
 	if(power_collider != noone) //&& collider.active == true)
 	{
 		 with(power_collider)
@@ -159,8 +179,10 @@ function state_player() {
 	    }
 	    fire_mode = power_collider.power_mode;
 		power_rate_timer = power_rate;
+		fire_rate = power_collider.fire_rate;
 	}
 	
+	/*
 	power_collider = instance_place(x, y, obj_power_pierce)
 	if(power_collider != noone) //&& collider.active == true)
 	{
@@ -172,7 +194,7 @@ function state_player() {
 		bullet_piercing = true;
 		power_rate_timer = power_rate;
 	}
-
+	*/
 	if(current_health <= 0)
 	{
 		instance_destroy();

@@ -19,3 +19,22 @@ part_type_blend(global.Particle1, true);
 
 part_type_life(global.Particle1, 20, 50);
 
+//player bullet particle
+
+global.particle2 = part_type_create();
+
+part_type_shape(global.particle2, pt_shape_cloud);
+
+part_type_size(global.particle2, 0.01, 0.05, 0, 0.3);
+
+part_type_color1(global.particle2, c_red);
+
+part_type_alpha3(global.particle2, 0.5, 1, 0);
+
+part_type_speed(global.particle2, 1, 4, -0.10, 0);
+
+part_type_direction(global.particle2, 0, 359, 0, 20);
+
+part_type_blend(global.particle2, true);
+
+part_type_life(global.particle2, 20, 50);
