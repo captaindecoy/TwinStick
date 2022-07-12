@@ -16,7 +16,7 @@ function state_player() {
 		power_rate_timer--;	
 	}
 	
-	else if(power_rate_timer == 0)
+	else if(power_rate_timer <= 0)
 	{
 		fire_mode = 1;
 		fire_rate = starting_fire_rate;
@@ -72,7 +72,7 @@ function state_player() {
 	    }
 	}
 
-	if((abs(rhaxis) > .5 || abs(rvaxis) > .5) && fire_rate_timer == fire_rate)
+	if((abs(rhaxis) > .5 || abs(rvaxis) > .5) && fire_rate_timer >= fire_rate)
 	{
 	    switch(fire_mode)
 	    {
