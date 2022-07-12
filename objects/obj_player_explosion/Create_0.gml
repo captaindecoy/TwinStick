@@ -7,5 +7,5 @@ endingRadius = 96;
 rate = 2;
 */
 
-radius = 64;
+radius = 48;
 destroy = false;

@@ -2,6 +2,10 @@
 function state_projectile() {
 	if(hp == 0)
 	{
+		if(explosive == true)
+		{
+			instance_create(x, y, obj_player_explosion);
+		}
 		instance_destroy();	
 	}
 	else 

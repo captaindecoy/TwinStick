@@ -13,6 +13,7 @@ destroy = false;
 damage = 1;
 //bullet_piercing = false;
 hp = 1;
+explosive = false;
 
 enemies_hit_list = ds_list_create();
 if(obj_player.bullet_piercing == true)

@@ -152,6 +152,19 @@ function state_player() {
 	            fire_rate_timer = 0;
 	            audio_play_sound(snd_explosion1, 10, false);
 	            break;
+			case 6:
+				bullet = instance_create(x,y,obj_projectile);
+	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
+	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
+	            bullet.movespeed = 18;
+	            bullet.dir = obj_player.rdir;
+	            bullet.image_angle = bullet.dir;
+	            bullet.timer = room_speed/4;
+				bullet.damage = bullet_damage;
+				bullet.explosive = true;
+	            fire_rate_timer = 0;
+	            audio_play_sound(snd_shot, 10, false);
+	            break;
 	    }
 	    muzzel_flash = true;
 	}
