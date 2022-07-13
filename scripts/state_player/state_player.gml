@@ -147,7 +147,7 @@ function state_player() {
 				bullet.damage = 3;
 				bullet.image_xscale *= 2;
 				bullet.image_xscale *= 2;
-				bullet.hp = 5;
+				bullet.hp = 50000;
 				//fire_rate = 24;
 	            fire_rate_timer = 0;
 	            audio_play_sound(snd_explosion1, 10, false);
@@ -156,12 +156,15 @@ function state_player() {
 				bullet = instance_create(x,y,obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
-	            bullet.movespeed = 18;
+	            bullet.movespeed = 32;
+				bullet.image_xscale *= .75;
+				bullet.image_yscale *= 1.5;
 	            bullet.dir = obj_player.rdir;
 	            bullet.image_angle = bullet.dir;
-	            bullet.timer = room_speed/4;
+	            bullet.timer = room_speed*4;
 				bullet.damage = bullet_damage;
 				bullet.explosive = true;
+				fire_rate = 24;
 	            fire_rate_timer = 0;
 	            audio_play_sound(snd_shot, 10, false);
 	            break;
