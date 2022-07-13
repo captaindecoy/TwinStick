@@ -145,8 +145,8 @@ function state_player() {
 	            bullet.image_angle = bullet.dir;
 	            bullet.timer = room_speed/2;
 				bullet.damage = 3;
-				bullet.image_xscale *= 2;
-				bullet.image_xscale *= 2;
+				bullet.image_xscale *= 4;
+				bullet.image_yscale *= 1.25;
 				bullet.hp = 50000;
 				//fire_rate = 24;
 	            fire_rate_timer = 0;
