@@ -25,6 +25,7 @@ function wave1_new_spawns(time) {
 		{
 			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_explosive);
 		}
+		instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_big_gem);
 	}
 }
 

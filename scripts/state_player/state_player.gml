@@ -76,7 +76,7 @@ function state_player() {
 	{
 	    switch(fire_mode)
 	    {
-	        case 1: 
+	        case 1: // normal shot
 	            bullet = instance_create(x,y,obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
@@ -110,7 +110,7 @@ function state_player() {
 	            */
 	            fire_rate_timer = 0;
 	            break;
-	        case 3:
+	        case 3: //spread shot
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir);
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 20);
 	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 40);
@@ -134,7 +134,7 @@ function state_player() {
 				ds_list_destroy(_list);
 				fire_rate_timer = 0;
 				break;
-			case 5: 
+			case 5: // piercing shot
 	            bullet = instance_create(x + lengthdir_x(sprite_width*2, obj_player.rdir),
 							y + lengthdir_y(sprite_height*2, obj_player.rdir),
 							obj_projectile);
@@ -144,7 +144,7 @@ function state_player() {
 	            bullet.dir = obj_player.rdir;
 	            bullet.image_angle = bullet.dir;
 	            bullet.timer = room_speed/2;
-				bullet.damage = 3;
+				bullet.damage = 5;
 				bullet.image_xscale *= 4;
 				bullet.image_yscale *= 1.25;
 				bullet.hp = 50000;
@@ -152,7 +152,7 @@ function state_player() {
 	            fire_rate_timer = 0;
 	            audio_play_sound(snd_explosion1, 10, false);
 	            break;
-			case 6:
+			case 6: // explosive shot
 				bullet = instance_create(x,y,obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
@@ -198,6 +198,25 @@ function state_player() {
 		fire_rate = power_collider.fire_rate;
 	}
 	
+	gem_collider = instance_place(x, y, obj_big_gem);
+	if(gem_collider != noone)
+	{
+		if(power_rate_timer > 0)
+		{
+			power_rate_timer = power_rate;
+			/*
+			if(power_rate_timer + (room_speed * 3) < power_rate)
+			{
+				power_rate_timer += room_speed * 3;
+			}
+			else
+			{
+				power_rate_timer = power_rate;
+			}
+			*/
+		}
+		instance_destroy(gem_collider);
+	}
 	/*
 	power_collider = instance_place(x, y, obj_power_pierce)
 	if(power_collider != noone) //&& collider.active == true)
