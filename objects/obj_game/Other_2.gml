@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.P_System = part_system_create_layer(layer, true);
-global.Particle1 = part_type_create();
+global.Particle1 = part_type_create(); // mite explosion
 
 part_type_shape(global.Particle1, pt_shape_flare);
 
@@ -39,6 +39,8 @@ part_type_blend(global.particle2, true);
 
 part_type_life(global.particle2, 20, 50);
 
+// explosion shot
+
 global.Particle3 = part_type_create();
 
 part_type_shape(global.Particle3, pt_shape_explosion);
@@ -56,3 +58,23 @@ part_type_direction(global.Particle3, 0, 359, 0, 20);
 part_type_blend(global.Particle3, true);
 
 part_type_life(global.Particle3, 20, 50);
+
+//shield
+
+global.Particle4 = part_type_create();
+
+part_type_shape(global.Particle4, pt_shape_cloud);
+
+part_type_size(global.Particle4, 1, 3, 0, 0.3);
+
+part_type_color2(global.Particle4, c_red, c_black);
+
+part_type_alpha1(global.Particle4, .2);
+
+part_type_speed(global.Particle4, 1, 3, -0.10, 0);
+
+part_type_direction(global.Particle4, 0, 359, 0, 10);
+
+part_type_blend(global.Particle4, true);
+
+part_type_life(global.Particle4, 2, 5);

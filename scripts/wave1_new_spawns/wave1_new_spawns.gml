@@ -12,7 +12,7 @@ function wave1_new_spawns(time) {
 	
 	if((time % (room_speed * 10) == 0))
 	{
-		chance = irandom(2);
+		chance = irandom(3);
 		if(chance == 0)
 		{
 			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_spread);
@@ -25,7 +25,11 @@ function wave1_new_spawns(time) {
 		{
 			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_explosive);
 		}
-		instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_big_gem);
+		else if(chance == 3)
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_shield);
+		}
+		//instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_big_gem);
 	}
 }
 
