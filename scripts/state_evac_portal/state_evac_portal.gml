@@ -19,6 +19,10 @@ function state_evac_portal(){
 		{
 			instance_destroy()
 		}
+		with(obj_power_shield)
+		{
+			instance_destroy();	
+		}
 		instance_destroy();
 	}
 }
