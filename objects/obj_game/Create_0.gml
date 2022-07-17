@@ -13,6 +13,8 @@ mites_destroyed = 0;
 powerup_chance = 5;
 current_powerup_chance = powerup_chance;
 baddie01_spawns = 5;
+evac_timer = room_speed * 60;
+evac_portal_spawned = false;
 //spawn_locationX = -100;
 //spawn_locationY = -100;
 

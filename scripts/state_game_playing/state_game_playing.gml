@@ -1,6 +1,15 @@
 function state_game_playing() {
 	game_timer++;
 	wave_timer++;
+	if(evac_timer > 0)
+	{
+		evac_timer--;
+	}
+	else if(evac_portal_spawned == false)
+	{
+		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_evac_portal);
+		evac_portal_spawned = true;
+	}
 
 	if(/*obj_player.current_health <= 0 || */gamepad_button_check_pressed(0, gp_select))
 	{
@@ -63,11 +72,13 @@ function state_game_playing() {
 		}
 		*/
 	
-		if(wave_spawning_done == true && instance_number(obj_enemy_parent) == 0)
+		if(wave_spawning_done == true /*&& instance_number(obj_enemy_parent) == 0 || (wave_spawning_done == true && wave_count == 1)*/)
 		{
 		
 			wave_spawning_done = false;
 			wave_timer = 0;
+			evac_timer = room_speed * 60;
+			evac_portal_spawned = false;
 			/*
 			wave_count++;
 			wave_break_text = "WAVE " + string(wave_count);
