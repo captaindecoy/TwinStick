@@ -1,44 +1,58 @@
 /// @description level1_spawns()
-function wave3_new_spawns(argument0) {
-	time = argument0;
-	if(mite_spawns > 0)
+function wave3_new_spawns(time) {
+	//time = argument0;
+	if(((time % (room_speed * .5) == 0) || time == 1) && time < (room_speed * 6))
 	{
-		if(((time % (room_speed * 5) == 0) && mite_spawns > 0) || time == 1){
-			spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);
-			instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_spikeyball);
-			mite_spawns--;
-		}
-		/*
-		if(((time % (room_speed * 4) == 0) && mite_spawns > 0)){
-			//if(irandom(3) == 3)
-			//{
-				instance_create(global.left_border + irandom(500), global.top_border + irandom(500), )
-			//}
-		}
-		*/
+		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_spikeyball);
+		//instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_baddie01);
+		//spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
 	}
-	else //if(instance_number(obj_enemy_parent) == 0)
+	if(((time % (room_speed * 3) == 0)) && time > (room_speed * 20))
 	{
-		wave_spawning_done = true;
-		//mite_spawns = 5; // setup for next wave
+		spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
+		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_baddie01);
+		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_spikeyball);
+		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_spikeyball);
+		
 	}
 	
-	/*
-	switch(time)
+	if((time % (room_speed * 10) == 0))
 	{
-		case 30:
-	        spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);;
-	        break;
-	    case 90:
-	        spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);;
-	        break;
-	    case 180:
-	        spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);;
-	        break;
-	    case 210:
-	        spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);;
-			wave_spawning_done = true;
-	        break;
+		chance = irandom(3);
+		if(chance == 0)
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_spread);
+		}
+		else if(chance == 1)
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_pierce);
+		}
+		else if(chance == 2)
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_explosive);
+		}
+		else if(chance == 3)
+		{
+			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_shield);
+		}
+		//instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_big_gem);
 	}
-	*/
 }
+
+
+
+// OLD CODE
+/*
+if(mite_spawns > 0)
+{
+	if(((time % (room_speed * 2) == 0)) || time == 1){
+		spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
+		mite_spawns--;
+	}
+}
+else
+{
+	wave_spawning_done = true;
+	mite_spawns = 5; // setup for next wave
+}
+*/

@@ -5,7 +5,7 @@ function wave1_new_spawns(time) {
 	{
 		spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
 	}
-	if(((time % (room_speed * 4) == 0)) && time > (room_speed * 30))
+	if(((time % (room_speed * 4) == 0)) && time > (room_speed * 20))
 	{
 		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_spikeyball);
 	}

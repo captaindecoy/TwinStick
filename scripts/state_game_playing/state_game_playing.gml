@@ -77,7 +77,7 @@ function state_game_playing() {
 		
 			wave_spawning_done = false;
 			wave_timer = 0;
-			evac_timer = room_speed * 60;
+			evac_timer = default_evac_time;
 			evac_portal_spawned = false;
 			/*
 			wave_count++;
