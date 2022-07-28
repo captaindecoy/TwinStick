@@ -59,6 +59,11 @@ function state_player() {
 		//obj_crosshair.x = x + lengthdir_x(32,rdir);
 		//obj_crosshair.y = y + lengthdir_y(32,rdir);
 	}
+	else
+	{
+		rdir = point_direction(x, y, mouse_x, mouse_y);
+		image_angle = rdir;
+	}
 
 	obj_crosshair.x = x + lengthdir_x(128,image_angle);
 	obj_crosshair.y = y + lengthdir_y(128,image_angle);
@@ -130,11 +135,16 @@ function state_player() {
 		
 	}
 
-	if((abs(rhaxis) > .5 || abs(rvaxis) > .5) && fire_rate_timer >= fire_rate)
+	if(((abs(rhaxis) > .5 || abs(rvaxis) > .5) || mouse_check_button(mb_left)) && fire_rate_timer >= fire_rate)
 	{
 	    switch(fire_mode)
 	    {
 	        case 1: // normal shot
+				xspawn = x + lengthdir_x(sprite_width*.75, obj_player.rdir);
+	            yspawn = y + lengthdir_y(sprite_height*.75, obj_player.rdir);
+            
+	            create_bullet(obj_projectile, xspawn, yspawn, 12, room_speed/2, obj_player.rdir);
+			/*
 	            bullet = instance_create_layer(x,y,"Instances",obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
@@ -142,6 +152,7 @@ function state_player() {
 	            bullet.dir = obj_player.rdir;
 	            bullet.image_angle = bullet.dir;
 	            bullet.timer = room_speed/2;
+				*/
 				bullet.damage = bullet_damage;
 	            fire_rate_timer = 0;
 	            audio_play_sound(snd_shot, 10, false);
