@@ -43,8 +43,8 @@ function state_player() {
 	var lvaxis = gamepad_axis_value(0, gp_axislv);
 	ldir = point_direction(0, 0, lhaxis, lvaxis);
 
-	//show_debug_message("lhaxis = " + string(lhaxis));
-	//show_debug_message("lvaxis = " + string(lvaxis));
+	show_debug_message("lhaxis = " + string(lhaxis));
+	show_debug_message("lvaxis = " + string(lvaxis));
 	//show_debug_message("ldir = " + string(ldir));
 
 	//var rhaxis = gamepad_axis_value(0, gp_axisrh);
@@ -56,7 +56,12 @@ function state_player() {
 	if(abs(rhaxis) > analog_deadzone || abs(rvaxis) > analog_deadzone)
 	{
 	    image_angle = rdir;
+		//obj_crosshair.x = x + lengthdir_x(32,rdir);
+		//obj_crosshair.y = y + lengthdir_y(32,rdir);
 	}
+
+	obj_crosshair.x = x + lengthdir_x(128,image_angle);
+	obj_crosshair.y = y + lengthdir_y(128,image_angle);
 
 	if(abs(lhaxis) > analog_deadzone || abs(lvaxis) > analog_deadzone)
 	{
@@ -70,6 +75,58 @@ function state_player() {
 	    {
 	        y += dy;
 	    }
+	}
+	else
+	{
+		dx = 0;
+		dy = 0;
+		
+		if(keyboard_check(ord("D")))
+		{
+			dx += (lengthdir_x(1, 0)) * movespeed;
+		}
+		if(keyboard_check(ord("W")))
+		{
+			dy += (lengthdir_y(1, 90)) * movespeed;
+		}
+		if(keyboard_check(ord("A")))
+		{
+			dx += (lengthdir_x(1, 180)) * movespeed;
+		}
+		if(keyboard_check(ord("S")))
+		{
+			dy += (lengthdir_y(1, 270)) * movespeed;
+		}
+		if(keyboard_check(ord("D")) && keyboard_check(ord("W")))
+		{
+			dx = (lengthdir_x(1, 45)) * movespeed;
+			dy = (lengthdir_y(1, 45)) * movespeed;
+		}
+		if(keyboard_check(ord("W")) && keyboard_check(ord("A")))
+		{
+			dx = (lengthdir_x(1, 135)) * movespeed;
+			dy = (lengthdir_y(1, 135)) * movespeed;
+		}
+		if(keyboard_check(ord("A")) && keyboard_check(ord("S")))
+		{
+			dx = (lengthdir_x(1, 225)) * movespeed;
+			dy = (lengthdir_y(1, 225)) * movespeed;
+		}
+		if(keyboard_check(ord("S")) && keyboard_check(ord("D")))
+		{
+			dx = (lengthdir_x(1, 315)) * movespeed;
+			dy = (lengthdir_y(1, 315)) * movespeed;
+		}
+		
+		if((x + dx - sprite_width / 2) > 96 && (x + dx + sprite_width / 2) < room_width - 96)
+	    {
+	        x += dx;
+	    }
+	    if((y + dy - sprite_height / 2) > 96 && (y + dy + sprite_height / 2) < room_height-96)
+	    {
+	        y += dy;
+	    }
+		
 	}
 
 	if((abs(rhaxis) > .5 || abs(rvaxis) > .5) && fire_rate_timer >= fire_rate)
