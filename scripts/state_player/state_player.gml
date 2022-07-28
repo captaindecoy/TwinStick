@@ -97,6 +97,7 @@ function state_player() {
 		{
 			dy += (lengthdir_y(1, 270)) * movespeed;
 		}
+		//handle diagonals by setting, not adding
 		if(keyboard_check(ord("D")) && keyboard_check(ord("W")))
 		{
 			dx = (lengthdir_x(1, 45)) * movespeed;
