@@ -14,22 +14,22 @@ function wave2_new_spawns_bak(argument0) {
 		
 		if((time % (room_speed * 4) == 0) && time > (room_speed * 10)){
 			//spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);
-			instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
+			instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500), "Instances",obj_baddie01);
 			baddie01_spawns--;
 		}
 		//if
 		//}
 		//else if(irandom(80) == 1)
 		//{
-		//	instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
+		//	instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500), "Instances",obj_baddie01);
 		//}
 	}
 	else if(instance_number(obj_enemy_parent) == 0)
 	{
 		//NOTE: this does not factor in baddie01 count currently
-		instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
-		instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
-		instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_baddie01);
+		instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500), "Instances",obj_baddie01);
+		instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500), "Instances",obj_baddie01);
+		instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500), "Instances",obj_baddie01);
 		wave_spawning_done = true;
 		mite_spawns = 10;
 	}

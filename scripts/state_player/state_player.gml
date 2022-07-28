@@ -77,7 +77,7 @@ function state_player() {
 	    switch(fire_mode)
 	    {
 	        case 1: // normal shot
-	            bullet = instance_create(x,y,obj_projectile);
+	            bullet = instance_create_layer(x,y,"Instances",obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
 	            bullet.movespeed = 24;
@@ -100,7 +100,7 @@ function state_player() {
 	            create_bullet(obj_projectile, xspawn, yspawn, 12, room_speed/2, obj_player.rdir);
 				audio_play_sound(snd_shot, 7, false);
 	            /*
-	            bullet = instance_create(xspawn,yspawn,obj_projectile);
+	            bullet = instance_create_layer(xspawn,yspawn,"Instances",obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
 	            bullet.movespeed = 12;
@@ -135,8 +135,9 @@ function state_player() {
 				fire_rate_timer = 0;
 				break;
 			case 5: // piercing shot
-	            bullet = instance_create(x + lengthdir_x(sprite_width*2, obj_player.rdir),
+	            bullet = instance_create_layer(x + lengthdir_x(sprite_width*2, obj_player.rdir),
 							y + lengthdir_y(sprite_height*2, obj_player.rdir),
+							"Instances",
 							obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
@@ -153,7 +154,7 @@ function state_player() {
 	            audio_play_sound(snd_explosion1, 10, false);
 	            break;
 			case 6: // explosive shot
-				bullet = instance_create(x,y,obj_projectile);
+				bullet = instance_create_layer(x,y,"Instances",obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	            bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
 	            bullet.movespeed = 32;

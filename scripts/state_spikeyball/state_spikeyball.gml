@@ -8,10 +8,10 @@ function state_spikeyball() {
 	}
 	else
 	{
-	    projectile1 = instance_create(x,y,obj_baddie02_projectile);
-		projectile2 = instance_create(x,y,obj_baddie02_projectile);
-		projectile3 = instance_create(x,y,obj_baddie02_projectile);
-		projectile4 = instance_create(x,y,obj_baddie02_projectile);
+	    projectile1 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
+		projectile2 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
+		projectile3 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
+		projectile4 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
 	    projectile1.dir = point_direction(x, y, x + 1, y - 1);
 		projectile2.dir = point_direction(x, y, x - 1, y - 1);
 		projectile3.dir = point_direction(x, y, x - 1, y + 1);

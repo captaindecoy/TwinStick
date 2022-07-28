@@ -13,7 +13,7 @@ function create_bullet(argument0, argument1, argument2, argument3, argument4, ar
 	_timer = argument4;
 	_angle = argument5;
 
-	bullet = instance_create(_xspawn, _yspawn, _type);
+	bullet = instance_create_layer(_xspawn, _yspawn, "Instances",_type);
 	bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
 	bullet.rvvalue = sign(gamepad_axis_value(0, gp_axisrv));
 	bullet.movespeed = _movespeed;

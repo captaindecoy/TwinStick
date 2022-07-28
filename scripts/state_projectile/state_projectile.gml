@@ -4,7 +4,7 @@ function state_projectile() {
 	{
 		if(explosive == true)
 		{
-			instance_create(x, y, obj_player_explosion);
+			instance_create_layer(x, y, "Instances",obj_player_explosion);
 		}
 		instance_destroy();	
 	}
@@ -28,7 +28,7 @@ function state_projectile() {
 			ds_list_add(enemies_hit_list, collider);
 		    //destroy = true;
 			hp--;
-			//instance_create(x, y, obj_player_explosion);
+			//instance_create_layer(x, y, "Instances",obj_player_explosion);
 		}
 		
 		

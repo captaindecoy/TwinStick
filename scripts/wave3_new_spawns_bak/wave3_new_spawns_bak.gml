@@ -5,14 +5,14 @@ function wave3_new_spawns_bak(argument0) {
 	{
 		if(((time % (room_speed * 5) == 0) && mite_spawns > 0) || time == 1){
 			spawn_mite_group(global.left_border + irandom(500), global.top_border + irandom(500), 4, 4);
-			instance_create(global.left_border + irandom(500), global.top_border + irandom(500), obj_spikeyball);
+			instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500), "Instances",obj_spikeyball);
 			mite_spawns--;
 		}
 		/*
 		if(((time % (room_speed * 4) == 0) && mite_spawns > 0)){
 			//if(irandom(3) == 3)
 			//{
-				instance_create(global.left_border + irandom(500), global.top_border + irandom(500), )
+				instance_create_layer(global.left_border + irandom(500), global.top_border + irandom(500),"Instances", )
 			//}
 		}
 		*/

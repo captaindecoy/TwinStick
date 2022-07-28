@@ -7,7 +7,8 @@ function wave1_new_spawns(time) {
 	}
 	if(((time % (room_speed * 4) == 0)) && time > (room_speed * 20))
 	{
-		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_spikeyball);
+		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
+		//instance_create_layer(200, 200, "Instances" , obj_spikeyball);
 	}
 	
 	if((time % (room_speed * 10) == 0))
@@ -15,22 +16,23 @@ function wave1_new_spawns(time) {
 		chance = irandom(3);
 		if(chance == 0)
 		{
-			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_spread);
+			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_spread);
 		}
 		else if(chance == 1)
 		{
-			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_pierce);
+			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_pierce);
 		}
 		else if(chance == 2)
 		{
-			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_explosive);
+			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_explosive);
 		}
 		else if(chance == 3)
 		{
-			instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_power_shield);
+			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_shield);
 		}
-		//instance_create(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), obj_big_gem);
+		//instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_big_gem);
 	}
+	
 }
 
 

@@ -5,7 +5,7 @@ if(place_meeting(x, y, obj_player))
 {
 	if(instance_number(obj_shield) == 0)
 	{
-		instance_create(obj_player.x, obj_player.y, obj_shield);
+		instance_create_layer(obj_player.x, obj_player.y, "Instances",obj_shield);
 		instance_destroy();
 	}
 }

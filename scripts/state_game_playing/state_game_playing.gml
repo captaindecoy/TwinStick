@@ -7,7 +7,7 @@ function state_game_playing() {
 	}
 	else if(evac_portal_spawned == false)
 	{
-		instance_create(global.left_border + irandom(700), global.top_border + irandom(500), obj_evac_portal);
+		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_evac_portal);
 		evac_portal_spawned = true;
 	}
 
@@ -98,21 +98,21 @@ function state_game_playing() {
 					upgrade2_obj = upgrade_list[|0];
 					ds_list_delete(upgrade_list, 0);
 				
-					upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, upgrade1_obj);
-					//upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
+					upgrade1 = instance_create_layer(global.upgrade1_x, global.upgrade1_y, "Instances",upgrade1_obj);
+					//upgrade1 = instance_create_layer(global.upgrade1_x, global.upgrade1_y, "Instances",obj_upgrade_speed);
 					upgrade1.button = gp_shoulderl;
-					upgrade2 = instance_create(global.upgrade2_x, global.upgrade2_y, upgrade2_obj);
+					upgrade2 = instance_create_layer(global.upgrade2_x, global.upgrade2_y,"Instances", upgrade2_obj);
 					upgrade2.button = gp_shoulderr;
 				
-					//enemy_upgrade1 = instance_create(global.enemy_upgrade1_x, global.enemy_upgrade1_y, obj_enemy_upgrade_bug_hp);
+					//enemy_upgrade1 = instance_create_layer(global.enemy_upgrade1_x, global.enemy_upgrade1_y, "Instances",obj_enemy_upgrade_bug_hp);
 				}
 				else
 				{
 					upgrade1_obj = upgrade_list[|0];
 					upgrade2_obj = noone;
 					ds_list_delete(upgrade_list, 0);
-					upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, upgrade1_obj);
-					//upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
+					upgrade1 = instance_create_layer(global.upgrade1_x, global.upgrade1_y, "Instances",upgrade1_obj);
+					//upgrade1 = instance_create_layer(global.upgrade1_x, global.upgrade1_y, "Instances",obj_upgrade_speed);
 				}
 			
 				// enemy upgrade options setup
@@ -125,10 +125,10 @@ function state_game_playing() {
 					enemy_upgrade2_obj = enemy_upgrade_list[|0];
 					ds_list_delete(enemy_upgrade_list, 0);
 				
-					enemy_upgrade1 = instance_create(global.enemy_upgrade1_x, global.enemy_upgrade1_y, enemy_upgrade1_obj);
-					//upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
+					enemy_upgrade1 = instance_create_layer(global.enemy_upgrade1_x, global.enemy_upgrade1_y, "Instances",enemy_upgrade1_obj);
+					//upgrade1 = instance_create_layer(global.upgrade1_x, global.upgrade1_y, "Instances",obj_upgrade_speed);
 					enemy_upgrade1.button = gp_shoulderl;
-					enemy_upgrade2 = instance_create(global.enemy_upgrade2_x, global.enemy_upgrade2_y, enemy_upgrade2_obj);
+					enemy_upgrade2 = instance_create_layer(global.enemy_upgrade2_x, global.enemy_upgrade2_y,"Instances", enemy_upgrade2_obj);
 					enemy_upgrade2.button = gp_shoulderr;
 				
 				
@@ -138,8 +138,8 @@ function state_game_playing() {
 					enemy_upgrade1_obj = enemy_upgrade_list[|0];
 					enemy_upgrade2_obj = noone;
 					ds_list_delete(enemy_upgrade_list, 0);
-					enemy_upgrade1 = instance_create(global.enemy_upgrade1_x, global.enemy_upgrade1_y, enemy_upgrade1_obj);
-					//upgrade1 = instance_create(global.upgrade1_x, global.upgrade1_y, obj_upgrade_speed);
+					enemy_upgrade1 = instance_create_layer(global.enemy_upgrade1_x, global.enemy_upgrade1_y, "Instances",enemy_upgrade1_obj);
+					//upgrade1 = instance_create_layer(global.upgrade1_x, global.upgrade1_y, "Instances",obj_upgrade_speed);
 				}
 			}
 			else

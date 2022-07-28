@@ -32,6 +32,6 @@ Converted description /// @description level1_spawns()
 
 Missing audiogroup for sound: 'snd_shot' - setting to default audio group
 Game speed set to 60
-Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'instance/instance_create_layer.gml'
 Added compatibility script 'object/object_get_depth.gml'
 Added compatibility script '__global_object_depths.gml'

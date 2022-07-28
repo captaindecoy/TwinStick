@@ -7,7 +7,7 @@ function state_baddie02() {
 	}
 	else
 	{
-	    projectile = instance_create(x,y,obj_baddie02_projectile);
+	    projectile = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
 	    projectile.dir = point_direction(x, y, obj_player.x, obj_player.y);;
 	    projectile.image_angle = projectile.dir;
 	    //forgetting timer reset just makes infinite! kinda cool actually

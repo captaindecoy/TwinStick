@@ -10,14 +10,14 @@ function state_shield(){
 	if(enemy_collider != noone && enemy_collider.active == true)
 	{
 		instance_destroy(enemy_collider);
-		instance_create(x, y, obj_player_explosion);
+		instance_create_layer(x, y,"Instances", obj_player_explosion);
 		instance_destroy();
 	}
 	bullet_collider = instance_place(x, y, obj_baddie02_projectile);
 	if(bullet_collider != noone)
 	{
 		instance_destroy(bullet_collider);
-		instance_create(x, y, obj_player_explosion);
+		instance_create_layer(x, y,"Instances", obj_player_explosion);
 		instance_destroy();
 	}
 }
