@@ -1,5 +1,10 @@
 /// @description state_player
 function state_player() {
+	if(mouse_x != mouse_x_prev || mouse_y != mouse_y_prev || mouse_check_button(mb_left))
+	{
+		mouse_active = true;	
+	}
+	
 	if(image_index == 1)
 	{
 	    image_index = 0;
@@ -56,10 +61,11 @@ function state_player() {
 	if(abs(rhaxis) > analog_deadzone || abs(rvaxis) > analog_deadzone)
 	{
 	    image_angle = rdir;
+		mouse_active = false;
 		//obj_crosshair.x = x + lengthdir_x(32,rdir);
 		//obj_crosshair.y = y + lengthdir_y(32,rdir);
 	}
-	else
+	else if(mouse_active)
 	{
 		rdir = point_direction(x, y, mouse_x, mouse_y);
 		image_angle = rdir;
@@ -299,7 +305,12 @@ function state_player() {
 		bullet_piercing = true;
 		power_rate_timer = power_rate;
 	}
+	
 	*/
+	
+	mouse_x_prev = mouse_x;
+	mouse_y_prev = mouse_y;
+	
 	if(current_health <= 0)
 	{
 		instance_destroy();

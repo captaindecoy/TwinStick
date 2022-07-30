@@ -24,7 +24,7 @@ function state_game_break(){
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_playing);
 	}
-	else if(gamepad_button_check_pressed(0, gp_face1))
+	else if(gamepad_button_check_pressed(0, gp_face1) || keyboard_check_pressed(vk_space))
 	{
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_playing);

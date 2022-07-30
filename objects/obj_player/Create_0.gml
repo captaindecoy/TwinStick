@@ -17,6 +17,9 @@ current_health = max_health;
 fire_mode = 1;
 muzzel_flash = false;
 bullet_damage = 1;
-bullet_piercing = true;
+bullet_piercing = true
+mouse_x_prev = mouse_x;
+mouse_y_prev = mouse_y;
+mouse_active = false;
 
 
