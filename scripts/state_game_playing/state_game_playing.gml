@@ -85,7 +85,8 @@ function state_game_playing() {
 			current_wave = wave_break_text;
 			*/
 			ds_stack_pop(state);
-			if(wave_count % 3 == 0 && ds_list_size(upgrade_list) > 0 && enable_powerups == true)
+			//if(wave_count % 3 == 0 && ds_list_size(upgrade_list) > 0 && enable_powerups == true) // upgrades everything third wave
+			if(ds_list_size(upgrade_list) > 0 && enable_powerups == true)
 			{
 				ds_stack_push(state, state_game_upgrades);
 				// player upgrade options setup

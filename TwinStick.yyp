@@ -25,6 +25,7 @@
     {"id":{"name":"snd_shot","path":"sounds/snd_shot/snd_shot.yy",},"order":1,},
     {"id":{"name":"create_bullet","path":"scripts/create_bullet/create_bullet.yy",},"order":0,},
     {"id":{"name":"state_game_paused","path":"scripts/state_game_paused/state_game_paused.yy",},"order":1,},
+    {"id":{"name":"state_player_hurt","path":"scripts/state_player_hurt/state_player_hurt.yy",},"order":27,},
     {"id":{"name":"snd_explosion2","path":"sounds/snd_explosion2/snd_explosion2.yy",},"order":3,},
     {"id":{"name":"obj_mite","path":"objects/obj_mite/obj_mite.yy",},"order":11,},
     {"id":{"name":"obj_parent_upgrade","path":"objects/obj_parent_upgrade/obj_parent_upgrade.yy",},"order":0,},

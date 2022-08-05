@@ -21,5 +21,7 @@ bullet_piercing = true
 mouse_x_prev = mouse_x;
 mouse_y_prev = mouse_y;
 mouse_active = false;
-
+hurt_timer_rate = room_speed;// / 2;
+hurt_timer = -1;
+hurt_direction = 0;
 

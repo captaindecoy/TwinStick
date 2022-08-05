@@ -1,17 +1,19 @@
 {
+  "name": "obj_shield",
   "spriteId": {
     "name": "spr_shield",
     "path": "sprites/spr_shield/spr_shield.yy",
   },
-  "solid": false,
-  "visible": true,
   "spriteMaskId": null,
+  "visible": true,
+  "solid": false,
   "persistent": false,
+  "physicsObject": false,
+  "managed": true,
   "parentObjectId": {
     "name": "obj_actor_parent",
     "path": "objects/obj_actor_parent/obj_actor_parent.yy",
   },
-  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -34,7 +36,6 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_shield",
   "tags": [],
   "resourceType": "GMObject",
 }

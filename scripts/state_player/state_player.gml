@@ -5,10 +5,23 @@ function state_player() {
 		mouse_active = true;	
 	}
 	
-	if(image_index == 1)
+	if(hurt_timer > 0)
 	{
-	    image_index = 0;
+		hurt_timer--;	
 	}
+	else
+	{
+		hurt_timer = -1;
+		image_index = 0;
+		image_speed = 0;
+	}
+	
+	/*
+	if(image_speed == 1)
+	{
+	    image_speed = 0;
+	}
+	*/
 
 	if(fire_rate_timer < fire_rate)
 	{
@@ -62,6 +75,8 @@ function state_player() {
 	{
 	    image_angle = rdir;
 		mouse_active = false;
+		obj_crosshair.x = x + lengthdir_x(128,image_angle);
+		obj_crosshair.y = y + lengthdir_y(128,image_angle);
 		//obj_crosshair.x = x + lengthdir_x(32,rdir);
 		//obj_crosshair.y = y + lengthdir_y(32,rdir);
 	}
@@ -69,10 +84,12 @@ function state_player() {
 	{
 		rdir = point_direction(x, y, mouse_x, mouse_y);
 		image_angle = rdir;
+		obj_crosshair.x = mouse_x;
+		obj_crosshair.y = mouse_y;
 	}
 
-	obj_crosshair.x = x + lengthdir_x(128,image_angle);
-	obj_crosshair.y = y + lengthdir_y(128,image_angle);
+	//obj_crosshair.x = x + lengthdir_x(128,image_angle);
+	//obj_crosshair.y = y + lengthdir_y(128,image_angle);
 
 	if(abs(lhaxis) > analog_deadzone || abs(lvaxis) > analog_deadzone)
 	{
@@ -249,17 +266,20 @@ function state_player() {
 	}
 
 	collider = instance_place(x, y, obj_enemy_parent)
-	if(collider != noone && collider.active == true)
+	if(collider != noone && collider.active == true && hurt_timer == -1)
 	{
+		if(current_health > 0)
+	    {
+	        current_health--;
+			hurt_direction = collider.image_angle;
+			hurt_timer = hurt_timer_rate;
+			ds_stack_push(state, state_player_hurt);
+	        image_speed = .5;
+	    }
 	    with(collider)
 	    {
 	        instance_destroy();
-	    }
-	    if(current_health > 0)
-	    {
-	        current_health--;
-	        image_index = 1;
-	    }
+	    }    
 	}
 	
 	power_collider = instance_place(x, y, obj_power_parent)
