@@ -4,7 +4,8 @@ function state_projectile() {
 	{
 		if(explosive == true)
 		{
-			instance_create_layer(x, y, "Instances",obj_player_explosion);
+			inst = instance_create_layer(x, y, "Instances",obj_player_explosion);
+			inst.radius = 48;
 		}
 		instance_destroy();	
 	}

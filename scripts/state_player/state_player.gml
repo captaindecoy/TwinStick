@@ -75,21 +75,24 @@ function state_player() {
 	{
 	    image_angle = rdir;
 		mouse_active = false;
-		obj_crosshair.x = x + lengthdir_x(128,image_angle);
-		obj_crosshair.y = y + lengthdir_y(128,image_angle);
+		//obj_crosshair.x = x + lengthdir_x(128,image_angle);
+		//obj_crosshair.y = y + lengthdir_y(128,image_angle);
 		//obj_crosshair.x = x + lengthdir_x(32,rdir);
 		//obj_crosshair.y = y + lengthdir_y(32,rdir);
 	}
-	else if(mouse_active)
+	
+	if(mouse_active)
 	{
 		rdir = point_direction(x, y, mouse_x, mouse_y);
 		image_angle = rdir;
 		obj_crosshair.x = mouse_x;
 		obj_crosshair.y = mouse_y;
 	}
-
-	//obj_crosshair.x = x + lengthdir_x(128,image_angle);
-	//obj_crosshair.y = y + lengthdir_y(128,image_angle);
+	else
+	{
+		obj_crosshair.x = x + lengthdir_x(128,image_angle);
+		obj_crosshair.y = y + lengthdir_y(128,image_angle);
+	}
 
 	if(abs(lhaxis) > analog_deadzone || abs(lvaxis) > analog_deadzone)
 	{

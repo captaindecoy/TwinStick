@@ -28,7 +28,17 @@ function state_game_playing() {
 	
 	if(instance_number(obj_player) == 0)
 	{
-		room_restart();
+		if(wave_count == 1)
+		{
+			room_restart();
+		}
+		else
+		{
+			wave_count--;
+			wave_spawning_done = true;
+			instance_destroy(obj_actor_parent);
+		}
+		instance_create_layer(512, 464, "Instances", obj_player); // hardcoded from room position
 	}
 	
 	if(room == rm_playing)
@@ -85,8 +95,8 @@ function state_game_playing() {
 			current_wave = wave_break_text;
 			*/
 			ds_stack_pop(state);
-			//if(wave_count % 3 == 0 && ds_list_size(upgrade_list) > 0 && enable_powerups == true) // upgrades everything third wave
-			if(ds_list_size(upgrade_list) > 0 && enable_powerups == true)
+			//if(wave_count % 3 == 0 && ds_list_size(upgrade_list) > 0 && enable_upgrades == true) // upgrades everything third wave
+			if(ds_list_size(upgrade_list) > 0 && enable_upgrades == true)
 			{
 				ds_stack_push(state, state_game_upgrades);
 				// player upgrade options setup
