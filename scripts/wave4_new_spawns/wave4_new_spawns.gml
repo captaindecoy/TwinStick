@@ -1,14 +1,19 @@
 /// @description level1_spawns()
-function wave3_new_spawns(time) {
+function wave4_new_spawns(time) {
 	//time = argument0;
-	if(((time % (room_speed * 2) == 0)) || time == 1)
-	{
-		spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
-	}
-	if(((time % (room_speed * 4) == 0)) && time > (room_speed * 20))
+	if(((time % (room_speed * .5) == 0) || time == 1) && time < (room_speed * 6))
 	{
 		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
-		//instance_create_layer(200, 200, "Instances" , obj_spikeyball);
+		//instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_baddie01);
+		//spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
+	}
+	if(((time % (room_speed * 3) == 0)) && time > (room_speed * 20))
+	{
+		spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
+		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_baddie01);
+		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
+		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
+		
 	}
 	
 	if((time % (room_speed * 10) == 0))
@@ -20,7 +25,7 @@ function wave3_new_spawns(time) {
 		}
 		else if(chance == 1)
 		{
-			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_pierce);
+			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500),"Instances", obj_power_pierce);
 		}
 		else if(chance == 2)
 		{
@@ -32,7 +37,6 @@ function wave3_new_spawns(time) {
 		}
 		//instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_big_gem);
 	}
-	
 }
 
 

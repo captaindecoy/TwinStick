@@ -6,7 +6,7 @@
     "path": "folders/Scripts/waves.yy",
   },
   "resourceVersion": "1.0",
-  "name": "wave1_spawns",
+  "name": "wave4_new_spawns",
   "tags": [],
   "resourceType": "GMScript",
 }

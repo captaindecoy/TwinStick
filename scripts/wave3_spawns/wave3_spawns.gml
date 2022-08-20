@@ -1,5 +1,5 @@
 /// @description level1_spawns()
-function wave1_spawns(argument0) {
+function wave3_spawns(argument0) {
 	time = argument0;
 	switch(time)
 	{

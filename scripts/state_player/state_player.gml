@@ -274,7 +274,13 @@ function state_player() {
 		if(current_health > 0)
 	    {
 	        current_health--;
-			hurt_direction = collider.image_angle;
+			if(collider.object_index != obj_ooze){
+				hurt_direction = collider.image_angle;
+			}
+			else
+			{
+				hurt_direction = ldir - 180;	
+			}
 			hurt_timer = hurt_timer_rate;
 			ds_stack_push(state, state_player_hurt);
 	        image_speed = .5;
