@@ -61,8 +61,8 @@ function state_player() {
 	var lvaxis = gamepad_axis_value(0, gp_axislv);
 	ldir = point_direction(0, 0, lhaxis, lvaxis);
 
-	show_debug_message("lhaxis = " + string(lhaxis));
-	show_debug_message("lvaxis = " + string(lvaxis));
+	//show_debug_message("lhaxis = " + string(lhaxis));
+	//show_debug_message("lvaxis = " + string(lvaxis));
 	//show_debug_message("ldir = " + string(ldir));
 
 	//var rhaxis = gamepad_axis_value(0, gp_axisrh);
@@ -294,7 +294,16 @@ function state_player() {
 	power_collider = instance_place(x, y, obj_power_parent)
 	if(power_collider != noone) //&& collider.active == true)
 	{
-		 with(power_collider)
+		show_debug_message(object_index(power_collider));
+		fire_mode = power_collider.power_mode;
+		power_rate_timer = power_rate;
+		fire_rate = power_collider.fire_rate;
+		if(variable_instance_exists(power_collider, "plus_hp"))
+		{
+			//max_health += 14
+			current_health += power_collider.plus_hp;
+		}
+		with(power_collider)
 	    {
 	        instance_destroy();
 	    }

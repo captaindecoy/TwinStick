@@ -7,8 +7,18 @@ function state_ooze() {
 	else
 	{
 		image_index = irandom_range(0, image_number - 1);
-		image_xscale = random_range(1.5, 1.7);
-		image_yscale = random_range(1.5, 1.7);
+		//image_xscale = random_range(1.5, 1.7);
+		//image_yscale = random_range(1.5, 1.7);
+		show_debug_message("xscale: " + string(image_xscale));
+		if(image_xscale < 7)
+		{
+			image_xscale += random_range(.3, .5);
+			image_yscale += random_range(.3, .5);
+			if(round(image_xscale) % 2 == 0)
+			{
+				hp += 1;
+			}
+		}
 		image_angle = irandom_range(0, 360);
 		image_timer = irandom_range(room_speed - 15, room_speed + 15);
 	}

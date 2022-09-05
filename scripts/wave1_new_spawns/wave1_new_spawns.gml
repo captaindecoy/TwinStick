@@ -11,24 +11,31 @@ function wave1_new_spawns(time) {
 		//instance_create_layer(200, 200, "Instances" , obj_spikeyball);
 	}
 	
-	if((time % (room_speed * 10) == 0))
+	if((time % (room_speed * 15) == 0))
 	{
-		chance = irandom(3);
-		if(chance == 0)
+		for(i = 0; i < 2; i++)
 		{
-			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_spread);
-		}
-		else if(chance == 1)
-		{
-			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_pierce);
-		}
-		else if(chance == 2)
-		{
-			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_explosive);
-		}
-		else if(chance == 3)
-		{
-			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_shield);
+			chance = irandom(4);
+			if(chance == 0)
+			{
+				instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_spread);
+			}
+			else if(chance == 1)
+			{
+				instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_pierce);
+			}
+			else if(chance == 2)
+			{
+				instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_explosive);
+			}
+			else if(chance == 3)
+			{
+				instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_shield);
+			}
+			else if(chance == 4)
+			{
+				instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_hp);
+			}
 		}
 		//instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_big_gem);
 	}

@@ -18,8 +18,8 @@ if(ds_stack_top(state) == state_game_break)
 
 if(instance_number(obj_player) > 0) // TODO: I don't like this
 {
-	draw_text(global.left_border, 76, "HP " + string(obj_player.current_health) + "/" + string(obj_player.max_health));
-	draw_rectangle(160, 82, 160 + (32 * obj_player.max_health), 90, true);
+	draw_text(global.left_border, 76, "HP " + string(obj_player.current_health)); //+ "/" + string(obj_player.max_health));
+	//draw_rectangle(160, 82, 160 + (32 * obj_player.max_health), 90, true);
 	draw_rectangle(160, 82, 160 + (32 * obj_player.current_health), 90, false);
 	draw_rectangle(global.right_border - 80, 82, (global.right_border - 80) + 80*(obj_player.power_rate_timer / obj_player.power_rate), 90, false);
 }
