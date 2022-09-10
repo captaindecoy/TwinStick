@@ -11,8 +11,10 @@ function wave3_new_spawns(time) {
 		//instance_create_layer(200, 200, "Instances" , obj_spikeyball);
 	}
 	
-	if((time % (room_speed * 10) == 0))
+	if((time % (room_speed * 15) == 0))
 	{
+		spawn_powerups(2);
+		/*
 		chance = irandom(3);
 		if(chance == 0)
 		{
@@ -29,7 +31,7 @@ function wave3_new_spawns(time) {
 		else if(chance == 3)
 		{
 			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_shield);
-		}
+		}*/
 		//instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_big_gem);
 	}
 	

@@ -1,7 +1,7 @@
 /// @description level1_spawns()
 function wave4_new_spawns(time) {
 	//time = argument0;
-	if(((time % (room_speed * .5) == 0) || time == 1) && time < (room_speed * 6))
+	if(((time % (room_speed * .5) == 0) || time == 1) && time < (room_speed * 5))
 	{
 		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
 		//instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_baddie01);
@@ -12,12 +12,14 @@ function wave4_new_spawns(time) {
 		spawn_mite_group(global.left_border + irandom(700), global.top_border + irandom(500), irandom_range(3,5), irandom_range(3,5));
 		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_baddie01);
 		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
-		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
+		//instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_spikeyball);
 		
 	}
 	
-	if((time % (room_speed * 10) == 0))
+	if((time % (room_speed * 15) == 0))
 	{
+		spawn_powerups(2);
+		/*
 		chance = irandom(3);
 		if(chance == 0)
 		{
@@ -34,7 +36,7 @@ function wave4_new_spawns(time) {
 		else if(chance == 3)
 		{
 			instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_shield);
-		}
+		}*/
 		//instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_big_gem);
 	}
 }

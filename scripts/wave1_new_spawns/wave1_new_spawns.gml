@@ -13,6 +13,8 @@ function wave1_new_spawns(time) {
 	
 	if((time % (room_speed * 15) == 0))
 	{
+		spawn_powerups(2);
+		/*
 		for(i = 0; i < 2; i++)
 		{
 			chance = irandom(4);
@@ -37,6 +39,7 @@ function wave1_new_spawns(time) {
 				instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_power_hp);
 			}
 		}
+		*/
 		//instance_create_layer(global.left_border + 16 + irandom(700), global.top_border + 16 + irandom(500), "Instances",obj_big_gem);
 	}
 	

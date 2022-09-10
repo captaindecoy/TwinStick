@@ -1,11 +1,11 @@
 function state_game_playing() {
 	game_timer++;
 	wave_timer++;
-	if(evac_timer > 0)
+	if(evac_timer > 0 && wave_count != 5)
 	{
 		evac_timer--;
 	}
-	else if(evac_portal_spawned == false)
+	else if(evac_portal_spawned == false && wave_count != 5)
 	{
 		instance_create_layer(global.left_border + irandom(700), global.top_border + irandom(500), "Instances",obj_evac_portal);
 		evac_portal_spawned = true;
@@ -45,7 +45,7 @@ function state_game_playing() {
 	{
 		if(wave_count % 5 == 0 && wave_spawning_done == false)
 		{
-			level1_spawns(wave_timer);
+			wave5_new_spawns(wave_timer);
 			//wave_spawning_done = true;
 		}
 		else if(wave_count % 4 == 0 && wave_spawning_done == false)
@@ -87,7 +87,10 @@ function state_game_playing() {
 		
 			wave_spawning_done = false;
 			wave_timer = 0;
-			evac_timer = default_evac_time;
+			if(wave_count != 5)
+			{
+				evac_timer = default_evac_time;
+			}
 			evac_portal_spawned = false;
 			/*
 			wave_count++;
@@ -157,6 +160,12 @@ function state_game_playing() {
 			{
 				ds_stack_push(state, state_game_break);
 			}
+			// reset player powerup
+			obj_player.power_rate_timer = 0;
+			obj_player.fire_mode = 1;
+			obj_player.fire_rate = obj_player.starting_fire_rate;
+			obj_player.bullet_piercing = false;
+			
 			wave_count++;
 			wave_break_text = "WAVE " + string(wave_count);
 			current_wave = wave_break_text;

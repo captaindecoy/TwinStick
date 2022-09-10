@@ -23,7 +23,7 @@ if(keyboard_check_pressed(ord("W")) || (vaxis < -.2 && prev_vaxis > -.2))
 	}
 	else
 	{
-		cursor = 2;	
+		cursor = 1;	
 	}
 }
 
@@ -31,10 +31,9 @@ if(keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1)
 {
 	if(cursor == 0)
 	{
-		room_goto_next();
-		//room_goto(rm_win_screen);
+		room_goto(rm_title);	
 	}
-	if(cursor == 2)
+	if(cursor == 1)
 	{
 		game_end();	
 	}
