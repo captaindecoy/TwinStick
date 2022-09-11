@@ -287,17 +287,24 @@ function state_player() {
 	    }
 	    with(collider)
 	    {
-	        instance_destroy();
+			hp -= obj_player.collision_damage;
+	        //instance_destroy();
 	    }    
 	}
 	
 	power_collider = instance_place(x, y, obj_power_parent)
 	if(power_collider != noone) //&& collider.active == true)
 	{
-		show_debug_message(object_index(power_collider));
-		fire_mode = power_collider.power_mode;
-		power_rate_timer = power_rate;
-		fire_rate = power_collider.fire_rate;
+		//show_debug_message(object_index(power_collider));
+		if(variable_instance_exists(power_collider, "power_mode"))
+		{
+			fire_mode = power_collider.power_mode;
+			power_rate_timer = power_rate;
+		}
+		if(variable_instance_exists(power_collider, "fire_rate"))
+		{
+			fire_rate = power_collider.fire_rate;
+		}
 		if(variable_instance_exists(power_collider, "plus_hp"))
 		{
 			//max_health += 14
@@ -307,9 +314,9 @@ function state_player() {
 	    {
 	        instance_destroy();
 	    }
-	    fire_mode = power_collider.power_mode;
-		power_rate_timer = power_rate;
-		fire_rate = power_collider.fire_rate;
+	    //fire_mode = power_collider.power_mode;
+		//power_rate_timer = power_rate;
+		//fire_rate = power_collider.fire_rate;
 	}
 	
 	gem_collider = instance_place(x, y, obj_big_gem);

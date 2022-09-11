@@ -34,6 +34,10 @@ if(keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1)
 		room_goto_next();
 		//room_goto(rm_win_screen);
 	}
+	if(cursor == 1)
+	{
+		room_goto(rm_howtoplay);	
+	}
 	if(cursor == 2)
 	{
 		game_end();	

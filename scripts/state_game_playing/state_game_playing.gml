@@ -11,12 +11,12 @@ function state_game_playing() {
 		evac_portal_spawned = true;
 	}
 
-	if(/*obj_player.current_health <= 0 || */gamepad_button_check_pressed(0, gp_select))
+	if(keyboard_check_pressed(ord("R")) || gamepad_button_check_pressed(0, gp_select))
 	{
 	    game_restart();
 	}
 
-	if(gamepad_button_check_pressed(0, gp_start) && ds_stack_top(obj_player.state) == state_player)
+	if((gamepad_button_check_pressed(0, gp_start) || keyboard_check_pressed(vk_escape)) && ds_stack_top(obj_player.state) == state_player)
 	{
 		//part_system_automatic_update(global.P_System, false);
 	    with(obj_actor_parent)

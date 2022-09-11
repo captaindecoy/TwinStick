@@ -3,7 +3,7 @@ ds_stack_push(state, state_baddie_spawn);
 
 active = false;
 active_state = state_bouncer;
-movespeed = 3;
+movespeed = 5;
 update_timer = 10;
 hp = 3;
 previousHp = hp;

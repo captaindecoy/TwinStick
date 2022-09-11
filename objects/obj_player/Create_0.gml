@@ -24,4 +24,5 @@ mouse_active = false;
 hurt_timer_rate = room_speed;// / 2;
 hurt_timer = -1;
 hurt_direction = 0;
+collision_damage = 3;
 crosshair = instance_create_layer(x + 128, y, "Instances", obj_crosshair);
