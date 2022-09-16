@@ -12,10 +12,10 @@ function state_spikeyboss() {
 		projectile2 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
 		projectile3 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
 		projectile4 = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
-	    projectile1.dir = point_direction(x, y, x + 1, y - 1);
-		projectile2.dir = point_direction(x, y, x - 1, y - 1);
-		projectile3.dir = point_direction(x, y, x - 1, y + 1);
-		projectile4.dir = point_direction(x, y, x + 1, y + 1);
+	    projectile1.dir = image_angle;//point_direction(x, y, x + 1, y - 1);
+		projectile2.dir = image_angle + 90;//point_direction(x, y, x - 1, y - 1);
+		projectile3.dir = image_angle + 180;//point_direction(x, y, x - 1, y + 1);
+		projectile4.dir = image_angle + 270;//point_direction(x, y, x + 1, y + 1);
 		//projectile1.dir = image_angle;
 		//projectile2.dir = image_angle + 90;
 		//projectile3.dir = image_angle - 90;
@@ -30,6 +30,14 @@ function state_spikeyboss() {
 		projectile3.movespeed = 3;
 		projectile4.movespeed = 3;
 	    //forgetting timer reset just makes infinite! kinda cool actually
+		projectile1.x += (lengthdir_x(1, projectile1.dir)) * 20 * projectile1.movespeed;
+		projectile1.y += (lengthdir_y(1, projectile1.dir)) * 20 * projectile1.movespeed;
+		projectile2.x += (lengthdir_x(1, projectile2.dir)) * 20 * projectile2.movespeed;
+		projectile2.y += (lengthdir_y(1, projectile2.dir)) * 20 * projectile2.movespeed;
+		projectile3.x += (lengthdir_x(1, projectile3.dir)) * 20 * projectile3.movespeed;
+		projectile3.y += (lengthdir_y(1, projectile3.dir)) * 20 * projectile3.movespeed;
+		projectile4.x += (lengthdir_x(1, projectile4.dir)) * 20 * projectile4.movespeed;
+		projectile4.y += (lengthdir_y(1, projectile4.dir)) * 20 * projectile4.movespeed;
 	    fire_timer = fire_interval;
 	}
 	

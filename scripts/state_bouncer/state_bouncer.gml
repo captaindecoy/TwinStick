@@ -8,6 +8,10 @@ function state_bouncer() {
 		image_angle = target_dir;
 	}
 	*/
+	if(fire_rate_timer > 0)
+	{
+		fire_rate_timer--;
+	}
 	
 	if(update_timer > 0)
 	{
@@ -30,16 +34,17 @@ function state_bouncer() {
 			inst_right = collision_rectangle(x, y - sprite_height/2, x + 1000, y + sprite_height/2, obj_player, false, true);
 			inst_left = collision_rectangle(x, y - sprite_height/2, x - 1000, y + sprite_height/2, obj_player, false, true);
 		}
-		if(inst_below != noone || inst_above != noone || inst_right != noone || inst_left != noone)
+		if((inst_below != noone || inst_above != noone || inst_right != noone || inst_left != noone) && fire_rate_timer <= 0)
 		{
 			projectile = instance_create_layer(x,y,"Instances",obj_baddie02_projectile);
 		    projectile.dir = point_direction(x, y, obj_player.x, obj_player.y);;
 		    projectile.image_angle = projectile.dir;
+			fire_rate_timer = fire_rate;
 		}
 	    //Makes for a cool stop motion/old school look
 	    //x += lengthdir_x(2, target_dir) * movespeed;
 	    //y += lengthdir_y(2, target_dir) * movespeed;
-	    update_timer = 10;
+	    update_timer = update_time;
 	}
 
 	if(y < global.top_border)

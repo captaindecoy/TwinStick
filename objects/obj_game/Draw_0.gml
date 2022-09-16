@@ -16,20 +16,38 @@ if(ds_stack_top(state) == state_game_break)
 	draw_set_font(fnt_arial_default);
 }
 
-if(instance_number(obj_player) > 0) // TODO: I don't like this
+draw_set_color(c_black);
+draw_rectangle(global.left_border, 74, global.right_border, global.top_border - 2, false);
+draw_set_color(c_red);
+if(instance_number(obj_player) > 0) // TODO: I don't like this (here in draw event)
 {
 	draw_text(global.left_border, 76, "HP " + string(obj_player.current_health)); //+ "/" + string(obj_player.max_health));
 	//draw_rectangle(160, 82, 160 + (32 * obj_player.max_health), 90, true);
-	draw_rectangle(160, 82, 160 + (32 * obj_player.current_health), 90, false);
+	draw_rectangle(160, 82, 160 + (16 * obj_player.current_health), 90, false);
 	draw_rectangle(global.right_border - 80, 82, (global.right_border - 80) + 80*(obj_player.power_rate_timer / obj_player.power_rate), 90, false);
 }
-draw_text(room_width / 2, 76, current_wave)
+draw_text(room_width / 3, 76, current_wave)
 //draw_text(room_width / 2 - 128, 76, "Speed = " + string(obj_player.movespeed));
-draw_text(room_width / 2 + 64 , 76, "Wave Timer: " + string(wave_timer/room_speed));
-draw_text(room_width / 2 + 64 , 58, "TIME TO EVAC: " + string(evac_timer/room_speed));
+//draw_text(room_width / 2 + 64 , 76, "Wave Timer: " + string(wave_timer/room_speed));
+draw_text(room_width / 2 + 56 , 76, "TIME TO WARP JUMP: " + string(evac_timer/room_speed));
 //draw_rectangle(room_width / 2 + 300, 82, global.right_border - 1, 90, true);
 //draw_rectangle(room_width / 2 + 300, 82, (global.right_border - room_width / 2 + 300) * ((obj_player.power_rate_timer / obj_player.power_rate)), 90, false);
 draw_rectangle(global.right_border - 80, 82, global.right_border, 90, true);
+
+
+var _steps = 15;
+var _xx = 50;
+var _yy = 50;
+var _radius = 30;
+//draw_primitive_begin(pr_trianglefan);
+draw_primitive_begin(pr_linestrip);
+//draw_vertex(_xx, _yy);
+var factor = evac_timer / (room_speed * 60); // I added this and it worked first time!
+for(var i = 0; i <= _steps; ++i;)
+{
+    draw_vertex(_xx + lengthdir_x(_radius, 365 * factor * i / _steps), _yy + lengthdir_y(_radius, 365 * factor * i / _steps));
+}
+draw_primitive_end();
 
 /*
 for(i = 0; i < mite_spawns; i++)
