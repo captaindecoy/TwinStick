@@ -359,6 +359,7 @@ function state_player() {
 	if(current_health <= 0)
 	{
 		instance_destroy();
+		//obj_game.death_count++;
 	    //room_restart();
 	}
 

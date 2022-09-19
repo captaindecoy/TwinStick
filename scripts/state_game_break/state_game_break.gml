@@ -5,9 +5,9 @@ function state_game_break(){
 	{
 		wave_break_text = "WAVE 1";
 	}*/
-	if(/*obj_player.current_health <= 0 || */gamepad_button_check_pressed(0, gp_select))
+	if(keyboard_check_pressed(ord("R")) || gamepad_button_check_pressed(0, gp_select))
 	{
-	    game_restart();
+	    room_goto(rm_title);
 	}
 
 	if(gamepad_button_check_pressed(0, gp_start) && ds_stack_top(obj_player.state) == state_player)

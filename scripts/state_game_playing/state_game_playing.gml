@@ -13,7 +13,8 @@ function state_game_playing() {
 
 	if(keyboard_check_pressed(ord("R")) || gamepad_button_check_pressed(0, gp_select))
 	{
-	    game_restart();
+	   // game_restart();
+	   room_goto(rm_title);
 	}
 
 	if((gamepad_button_check_pressed(0, gp_start) || keyboard_check_pressed(vk_escape)) && ds_stack_top(obj_player.state) == state_player)
@@ -28,6 +29,15 @@ function state_game_playing() {
 	
 	if(instance_number(obj_player) == 0)
 	{
+		//if(wave_count != 1)
+		//{
+			wave_count--;
+		//}
+		wave_spawning_done = true;
+		instance_destroy(obj_actor_parent);
+		instance_create_layer(512, 464, "Instances", obj_player);
+		global.death_count++;
+		/*
 		if(wave_count == 1)
 		{
 			room_restart();
@@ -39,6 +49,7 @@ function state_game_playing() {
 			instance_destroy(obj_actor_parent);
 		}
 		instance_create_layer(512, 464, "Instances", obj_player); // hardcoded from room position
+		*/
 	}
 	
 	if(room == rm_playing)

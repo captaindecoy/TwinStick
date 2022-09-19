@@ -18,6 +18,8 @@ evac_timer = default_evac_time;
 evac_portal_spawned = false;
 //spawn_locationX = -100;
 //spawn_locationY = -100;
+//death_counter was here
+global.death_count = 0;
 
 //arena borders
 global.left_border = 96;

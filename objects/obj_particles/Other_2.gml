@@ -1,9 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+/// @description Insert description here
+// You can write your code in this editor
 /// @description Insert description here
 // You can write your code in this editor
 
-/*
 global.P_System = part_system_create_layer(layer, true);
 global.Particle1 = part_type_create(); // mite explosion
 
@@ -82,4 +84,3 @@ part_type_direction(global.Particle4, 0, 359, 0, 10);
 part_type_blend(global.Particle4, true);
 
 part_type_life(global.Particle4, 2, 5);
-*/

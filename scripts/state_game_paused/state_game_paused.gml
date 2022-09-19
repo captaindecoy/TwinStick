@@ -16,7 +16,7 @@ function state_game_paused() {
 	
 	if(obj_player.current_health <= 0 || gamepad_button_check_pressed(0, gp_select) || keyboard_check_pressed(ord("R")))
 	{
-	    game_restart();
+	    room_goto(rm_title);
 	}
 
 
