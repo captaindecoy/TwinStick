@@ -27,7 +27,7 @@ function state_projectile() {
         
 		    }
 			ds_list_add(enemies_hit_list, collider);
-		    //destroy = true;
+		    destroy = true;
 			hp--;
 			//instance_create_layer(x, y, "Instances",obj_player_explosion);
 		}
@@ -37,7 +37,7 @@ function state_projectile() {
 		timer--;
 		if(timer <= 0)
 		{
-		    //destroy = true;
+		    destroy = true;
 			hp = 0;
 		}
 
@@ -61,7 +61,7 @@ function state_projectile() {
 			{
 				y = global.bottom_border;	
 			}
-			//destroy = true;
+			destroy = true;
 			hp = 0;
 		}
 		

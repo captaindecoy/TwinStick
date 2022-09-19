@@ -4,7 +4,7 @@
 title = "Thanks for trying my game!";
 message1 = "Survive against the swarms";
 message2 = "until the warp jump appears!";
-message3 = "Use powerups to keep them at bay.";
+message3 = "Use power ups to keep them at bay.";
 //options = [ "RETURN TO TITLE SCREEN", "EXIT" ];
 //cursor = 0;
 //prev_vaxis = 0;

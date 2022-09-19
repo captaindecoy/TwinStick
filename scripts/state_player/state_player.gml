@@ -274,7 +274,7 @@ function state_player() {
 		if(current_health > 0)
 	    {
 	        current_health--;
-			if(collider.object_index != obj_ooze){
+			if(collider.object_index != obj_ooze && collider.object_index != obj_baddie02){
 				hurt_direction = collider.image_angle;
 			}
 			else
