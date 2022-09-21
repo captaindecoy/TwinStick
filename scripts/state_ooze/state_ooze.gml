@@ -25,6 +25,7 @@ function state_ooze() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 20);
+		audio_play_sound(snd_explosion1, 10, false);
 	    instance_destroy();
 	}
 

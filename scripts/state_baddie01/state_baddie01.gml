@@ -49,6 +49,7 @@ function state_baddie01() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 80);
+		audio_play_sound(snd_explosion3, 10, false);
 	    instance_destroy();
 	}
 	/*

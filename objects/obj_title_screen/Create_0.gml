@@ -5,3 +5,5 @@ title = "ONSLAUGHT";
 options = [ "NEW GAME", "HOW TO PLAY", "EXIT" ];
 cursor = 0;
 prev_vaxis = 0;
+
+audio_stop_sound(snd_battle_music);

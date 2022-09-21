@@ -9,3 +9,4 @@ rate = 2;
 
 radius = 96//48;
 destroy = false;
+audio_play_sound(snd_explosion3, 8, false);

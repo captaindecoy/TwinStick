@@ -181,7 +181,7 @@ function state_player() {
 				*/
 				bullet.damage = bullet_damage;
 	            fire_rate_timer = 0;
-	            audio_play_sound(snd_shot, 10, false);
+	            audio_play_sound(snd_shot2, 10, false);
 	            break;
 	        case 2:
 	            xspawn = x + lengthdir_x(sprite_width*.75, obj_player.rdir - 90);
@@ -193,7 +193,7 @@ function state_player() {
 	            yspawn = y + lengthdir_y(sprite_height*.75, obj_player.rdir + 90);
             
 	            create_bullet(obj_projectile, xspawn, yspawn, 12, room_speed/2, obj_player.rdir);
-				audio_play_sound(snd_shot, 7, false);
+				audio_play_sound(snd_shot2, 7, false);
 	            /*
 	            bullet = instance_create_layer(xspawn,yspawn,"Instances",obj_projectile);
 	            bullet.rhvalue = sign(gamepad_axis_value(0, gp_axisrh));
@@ -211,7 +211,7 @@ function state_player() {
 	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir - 40);
 	            create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 20);
 	            //create_bullet(obj_projectile, x, y, 12, room_speed/2, obj_player.rdir + 40);
-				audio_play_sound(snd_shot, 10, false);
+				audio_play_sound(snd_shot2, 10, false);
 	            fire_rate_timer = 0;
 	            break;
 			case 4:
@@ -262,7 +262,7 @@ function state_player() {
 				bullet.explosive = true;
 				fire_rate = 24;
 	            fire_rate_timer = 0;
-	            audio_play_sound(snd_shot, 10, false);
+	            audio_play_sound(snd_shot2, 10, false);
 	            break;
 	    }
 	    muzzel_flash = true;
@@ -273,6 +273,7 @@ function state_player() {
 	{
 		if(current_health > 0)
 	    {
+			audio_play_sound(snd_player_hurt, 10, false);
 	        current_health--;
 			if(collider.object_index != obj_ooze && collider.object_index != obj_baddie02){
 				hurt_direction = collider.image_angle;
@@ -314,6 +315,7 @@ function state_player() {
 	    {
 	        instance_destroy();
 	    }
+		audio_play_sound(snd_powerup, 10, false);
 	    //fire_mode = power_collider.power_mode;
 		//power_rate_timer = power_rate;
 		//fire_rate = power_collider.fire_rate;

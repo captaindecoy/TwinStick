@@ -28,6 +28,10 @@ function state_game_break(){
 	{
 		ds_stack_pop(state);
 		ds_stack_push(state, state_game_playing);
+		if(wave_count == 1 && audio_is_playing(snd_battle_music) == false)
+		{
+			audio_play_sound(snd_battle_music, 4, true);	
+		}
 		wave_break_timer = room_speed * 7;
 	}/*
 	else if(wave_count != 1)
