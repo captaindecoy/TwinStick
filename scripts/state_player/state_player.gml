@@ -246,7 +246,10 @@ function state_player() {
 				bullet.hp = 50000;
 				//fire_rate = 24;
 	            fire_rate_timer = 0;
-	            audio_play_sound(snd_explosion1, 10, false);
+				if(audio_is_playing(snd_explosion1) == false)
+				{
+					audio_play_sound(snd_explosion1, 10, false);
+				}
 	            break;
 			case 6: // explosive shot
 				bullet = instance_create_layer(x,y,"Instances",obj_projectile);

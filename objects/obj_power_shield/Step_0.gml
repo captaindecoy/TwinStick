@@ -6,6 +6,7 @@ if(place_meeting(x, y, obj_player))
 	if(instance_number(obj_shield) == 0)
 	{
 		instance_create_layer(obj_player.x, obj_player.y, "Instances",obj_shield);
+		audio_play_sound(snd_powerup, 10, false);
 		instance_destroy();
 	}
 }

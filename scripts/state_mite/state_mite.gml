@@ -64,7 +64,10 @@ function state_mite() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 50);
-		audio_play_sound(snd_mite_explode, 10, false);
+		if(audio_is_playing(snd_explosion3) == false)
+		{
+			audio_play_sound(snd_mite_explode, 10, false);
+		}
 		//if using mites destroyed for power up chance
 		/*
 		obj_game.mites_destroyed++;
