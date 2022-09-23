@@ -300,6 +300,7 @@ function state_player() {
 	if(power_collider != noone) //&& collider.active == true)
 	{
 		//show_debug_message(object_index(power_collider));
+		destroy_powerup = true;
 		if(variable_instance_exists(power_collider, "power_mode"))
 		{
 			fire_mode = power_collider.power_mode;
@@ -312,13 +313,23 @@ function state_player() {
 		if(variable_instance_exists(power_collider, "plus_hp"))
 		{
 			//max_health += 14
-			current_health += power_collider.plus_hp;
+			if(current_health < 10)
+			{
+				current_health += power_collider.plus_hp;
+			}
+			else
+			{
+				destroy_powerup = false;	
+			}
 		}
-		with(power_collider)
-	    {
-	        instance_destroy();
-	    }
-		audio_play_sound(snd_powerup, 10, false);
+		if(destroy_powerup == true)
+		{
+			with(power_collider)
+		    {
+		        instance_destroy();
+		    }
+			audio_play_sound(snd_powerup, 10, false);
+		}
 	    //fire_mode = power_collider.power_mode;
 		//power_rate_timer = power_rate;
 		//fire_rate = power_collider.fire_rate;
