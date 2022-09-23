@@ -8,3 +8,8 @@ message3 = "Use power ups to keep them at bay.";
 //options = [ "RETURN TO TITLE SCREEN", "EXIT" ];
 //cursor = 0;
 //prev_vaxis = 0;
+
+if(audio_is_playing(snd_title_song) == false)
+{
+	audio_play_sound(snd_title_song, 10, true);	
+}

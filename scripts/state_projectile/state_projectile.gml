@@ -27,8 +27,12 @@ function state_projectile() {
         
 		    }
 			ds_list_add(enemies_hit_list, collider);
-		    destroy = true;
+		    //destroy = true;
 			hp--;
+			if(hp == 0) // this is checked earlier in the script but this is to make sure white circle gets drawn when hitting an enemy
+			{
+				destroy = true;	
+			}
 			//instance_create_layer(x, y, "Instances",obj_player_explosion);
 		}
 		
