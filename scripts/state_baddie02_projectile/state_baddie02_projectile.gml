@@ -7,6 +7,7 @@ function state_baddie02_projectile() {
 	collider = instance_place(x, y, obj_player)
 	if(collider != noone)
 	{
+		audio_play_sound(snd_player_hurt, 10, false);
 	    if(collider.current_health > 0 && collider.hurt_timer == -1)
 	    {
 			// called in player state as well

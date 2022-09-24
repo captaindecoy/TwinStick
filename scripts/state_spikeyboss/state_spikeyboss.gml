@@ -86,6 +86,7 @@ function state_spikeyboss() {
 	if(hp <= 0)
 	{
 		part_particles_create(global.P_System, x, y, global.Particle1, 100);
+		audio_play_sound(snd_explosion3, 10, false);
 		room_goto(rm_win_screen);
 	    //instance_destroy();
 	}

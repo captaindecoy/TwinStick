@@ -66,7 +66,11 @@ if(ds_stack_top(state) == state_game_paused)
 	draw_set_font(fnt_arial_big_wave);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_text(room_width / 2, room_height / 2, "PAUSED");
+	draw_text(room_width / 2, room_height / 2, "PAUSED"); //
+	draw_set_font(fnt_arial_default);
+	draw_text_ext_transformed(room_width / 2, room_height / 2 + 130, "Press Back/Select button or R key", 10, 10000, 1, 1, 0);
+	draw_text_ext_transformed(room_width / 2, room_height / 2 + 150, " to return to main menu.", 10, 10000, 1, 1, 0);
+	
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_font(fnt_arial_default);

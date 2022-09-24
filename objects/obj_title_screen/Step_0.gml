@@ -40,7 +40,20 @@ if(keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1)
 	}
 	if(cursor == 2)
 	{
-		game_end();	
+		if(window_get_fullscreen() == false)
+		{
+			window_set_fullscreen(true);
+			options[2] = "WINDOWED MODE";
+		}
+		else
+		{
+			window_set_fullscreen(false);
+			options[2] = "FULLSCREEN";
+		}
+	}
+	if(cursor ==3)
+	{
+		game_end();
 	}
 }
 

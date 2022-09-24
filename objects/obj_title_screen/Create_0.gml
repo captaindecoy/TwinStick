@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 title = "ONSLAUGHT";
-options = [ "NEW GAME", "HOW TO PLAY", "EXIT" ];
+options = [ "NEW GAME", "HOW TO PLAY", "FULLSCREEN", "EXIT" ];
 cursor = 0;
 prev_vaxis = 0;
 

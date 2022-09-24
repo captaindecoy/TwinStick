@@ -8,6 +8,7 @@ draw_text_ext_transformed(room_width / 2, 200, title, 2, 10000, .8, .8, 0);
 draw_text_ext_transformed(room_width / 2, 350, options[0], 2, 10000, .3, .3, 0);
 draw_text_ext_transformed(room_width / 2, 400, options[1], 2, 10000, .3, .3, 0);
 draw_text_ext_transformed(room_width / 2, 450, options[2], 2, 10000, .3, .3, 0);
+draw_text_ext_transformed(room_width / 2, 500, options[3], 2, 10000, .3, .3, 0);
 
 if(cursor == 0)
 {
@@ -17,9 +18,12 @@ else if(cursor == 1)
 {
 	draw_text_ext_transformed(room_width / 4, 400, ">", 2, 10000, .3, .3, 0);		
 }
-
 else if(cursor == 2)
 {
 	draw_text_ext_transformed(room_width / 4, 450, ">", 2, 10000, .3, .3, 0);		
+}
+else if(cursor == 3)
+{
+	draw_text_ext_transformed(room_width / 4, 500, ">", 2, 10000, .3, .3, 0);		
 }
 
