@@ -19,7 +19,7 @@ function state_game_playing() {
 
 	if((gamepad_button_check_pressed(0, gp_start) || keyboard_check_pressed(vk_escape)) && ds_stack_top(obj_player.state) == state_player)
 	{
-		//part_system_automatic_update(global.P_System, false);
+		part_system_automatic_update(global.P_System, false);
 	    with(obj_actor_parent)
 	    {
 	        ds_stack_push(state, state_idle);
